@@ -1,0 +1,131 @@
+<div id="tab_container">
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="styles2.css">
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="login">
+                <div class="wrap-img">
+
+                    <div class="nv"> <img class="img" src="aa.PNG"></img></div>
+
+                    <div class="wrap">
+
+                        <div class="user">
+
+
+
+                            <div class="form-wrap">
+
+
+                                <div id="tab_header" class="tabs">
+                                    <div id="tab_header_1" class="tab_header_common" onclick="tab_Change(this);">
+                                        <p class="tab_header_text_common">Login</p>
+                                    </div>
+                                    <div id="tab_header_2" class="tab_header_common" onclick="tab_Change(this);">
+                                        <p class="tab_header_text_common">Order</p>
+                                    </div>
+                                </div>
+
+
+                                <div id="tabs_content">
+                                    <div id="login-tab-content" class="tab_content_common">
+                                        <form class="login-form" action="" method="post">
+                                            <input type="text" class="input" id="user_login" autocomplete="off"
+                                                placeholder="User ID">
+                                            <input type="password" class="input" id="user_pass" autocomplete="off"
+                                                placeholder="Password">
+                                            <div class="check">
+                                                <input type="checkbox" class="checkbox" checked id="remember_me">
+                                                <label for="remember_me" class="re">Remember me</label>
+                                            </div>
+                                            <input type="submit" class="button" value="Login">
+                                        </form>
+                                    </div>
+
+
+                                    <div id="signup-tab-content" class="tab_content_common">
+                                        <form class="signup-form" action="" method="post">
+                                            <input type="email" class="input" id="user_email" autocomplete="off"
+                                                placeholder="Name">
+                                            <input type="text" class="input" id="user_name" autocomplete="off"
+                                                placeholder="Phone">
+                                            <input type="password" class="input" id="user_pass" autocomplete="off"
+                                                placeholder="Order Number">
+                                            <input type="submit" class="button" value="Search">
+                                        </form>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="help-action">
+                                <p><i class="fa fa-arrow-left" aria-hidden="true"></i><a class="forgot" href="#">Forgot
+                                        your
+                                        password?</a></p>
+                            </div>
+                            <div class="Sign-up">
+                                <p><i class="fa fa-arrow-left" aria-hidden="true"></i><a class="Sign" href="#">Don't
+                                        Have an
+                                        Account?</a></p>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <script>
+
+            /*
+            [JS 요약 설명]
+            1. includes : 특정 값이 포함된 것을 확인합니다
+            2. document.getElementById(객체).style : 특정 객체 스타일 속성을 변경합니다    	
+            */
+    
+            /* [이벤트 수행 함수] */
+            function tab_Change(tagId){
+                var id = tagId.id;
+                console.log("");
+                console.log("[tab_Change] : [start] : " + id); 
+                console.log("");
+    
+                //반복문을 수행하면서 스타일 변경 실시
+                for(var i=1; i<=4; i++){
+                    if(id.includes(i)){
+                        var content = "tab_content_" + String(i);
+                        document.getElementById(content).style.display = "block";
+                    }
+                    else {
+                        var content = "tab_content_" + String(i);
+                        document.getElementById(content).style.display = "none";
+                    }
+                }    		
+    
+            };
+            
+        </script>
+
+    </body>
+
+    </html>
+

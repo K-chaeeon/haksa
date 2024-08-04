@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hap.css">
+
+</head>
+
+<body>
+    <div class="wrap-img">
+        <container>
+            <section id="s0">
+                <div class="page1">
+                    <div class="nv"> <img class="img" src="aa.PNG"></img></div>
+
+                    <div class="login">
+
+                        <div class="wrap">
+
+                            <div class="user">
+
+
+
+                                <div class="form-wrap">
+
+                                    <!-- TABS -->
+                                    <div class="tabs">
+                                        <h3><a href="#login-tab-content" class="log-in">Login</a></h3>
+                                        <h3><a href="#orderV-tab-content" class="orderV">Order</a></h3>
+                                    </div>
+
+                                    <div class="tabs-content">
+                                        <!-- TABS CONTENT LOGIN -->
+                                        <div id="login-tab-content" class="active">
+                                            <form class="login-form" action="" method="post">
+                                                <input type="text" class="input" id="user_login" autocomplete="off"
+                                                    placeholder="User ID">
+                                                <input type="password" class="input" id="user_pass" autocomplete="off"
+                                                    placeholder="Password">
+                                                <div class="check">
+                                                    <input type="checkbox" class="checkbox" checked id="remember_me">
+                                                    <label for="remember_me" class="re">Remember me</label>
+                                                </div>
+                                                <input type="submit" class="button" value="Login">
+                                            </form>
+
+
+                                            <div class="line">
+                                                OR
+                                            </div>
+
+                                            <div class="sns-wrap">
+                                                <div class="login-sns">
+                                                    <a href=""><img class="KKO" src="K.webp"></img></a>
+                                                    <a href=""><img class="GGL" src="G.png"></img></a>
+                                                    <a href=""><img class="GGL" src="G.png"></img></a>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="help">
+                                                <p>
+                                                    <a class="forgot" aria-hidden="true" href="#">Forgot
+                                                        your
+                                                        password?</a>
+                                                </p>
+                                            </div>
+                                            <div class="Signw1">
+                                                <p>
+                                                    <a class="dont" href="#section1" id='s-u'
+                                                        onclick="goToScroll('sign-up')">Don't Have an
+                                                        Account?</a>
+                                                </p>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- TABS CONTENT order -->
+                                        <div id="orderV-tab-content">
+                                            <form class="orderV-form" action="" method="post">
+                                                <input type="email" class="input" id="user_email" autocomplete="off"
+                                                    placeholder="Name">
+                                                <input type="text" class="input" id="user_name" autocomplete="off"
+                                                    placeholder="Phone">
+                                                <input type="password" class="input" id="user_pass" autocomplete="off"
+                                                    placeholder="Order Number">
+                                                <input type="submit" class="button" value="Search">
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                    <div class="Signw2">
+                                        <p><a class="dont" href="#section1" id='s-u'
+                                                onclick="goToScroll('sign-up')">Don't Have an Account?</a>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </container>
+
+        <container>
+            <section id="s1">
+                <div class="page2">
+                    <div class="sign-up">
+                        <div class="wrap2">
+                            <div class="u-box"> <!--.user 사용하기-->
+                                <div class="s-form-wrap">
+
+                                    <!--아이디/비밀번호/비밀번호확인/이름/주소/일반전화/휴대전화/이메일-->
+                                    <div class="sign-in-box">
+
+
+                                        <form action="login.html">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <h2>회원가입</h2>
+                                                    </td>
+                                                </tr>
+
+                                                <div class="ok">
+
+                                                    <tr>
+                                                        <td class="short">아이디</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" class="textid">
+                                                            <input type="submit" value="중복확인" class="btn0">
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="short">비밀번호</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="password" class="text"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="short">비밀번호 확인</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="password" class="text"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>이름</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="text" class="text"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>생년월일</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="date" class="text"></td>
+                                                    </tr>
+                                                    <div class="e">
+                                                        <tr>
+                                                            <td>이메일</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="text" class="email"> @
+                                                                <select>
+                                                                    <option>naver.com</option>
+                                                                    <option>gmail.com</option>
+                                                                    <option>daum.net</option>
+                                                                    <option>nate.com</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                    </div>
+
+                                                </div>
+                                                <div class="button">
+                                                    <tr>
+                                                        <td><input type="submit" value="가입하기" class="btn">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="submit" value="취소" class="btn2" id="btn02">
+                                                        </td>
+                                                    </tr>
+                                                </div>
+                                            </table>
+                                        </form>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </container>
+    </div>
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 탭 링크를 가져옵니다.
+            const tabLinks = document.querySelectorAll('.tabs h3 a');
+
+            // 탭 클릭 이벤트를 추가합니다.
+            tabLinks.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    // 현재 활성화된 탭 링크와 탭 콘텐츠를 찾습니다.
+                    const currentActiveLink = document.querySelector('.tabs h3 a.active');
+                    const currentActiveContent = document.querySelector('.tabs-content .active');
+
+                    if (currentActiveLink) {
+                        currentActiveLink.classList.remove('active');
+                    }
+
+                    if (currentActiveContent) {
+                        currentActiveContent.classList.remove('active');
+                    }
+
+                    // 클릭된 탭 링크에 active 클래스를 추가합니다.
+                    this.classList.add('active');
+
+                    // 클릭된 탭 링크에 해당하는 콘텐츠를 표시합니다.
+                    const targetContentId = this.getAttribute('href');
+                    const targetContent = document.querySelector(targetContentId);
+                    targetContent.classList.add('active');
+                });
+            });
+
+
+
+            document.getElementById('s-u').addEventListener('click', function() {
+            document.getElementById('s1').style.display = 'flex'; // Use flex to center
+            document.body.style.overflow = 'auto';
+            document.getElementById('s1').scrollIntoView({ behavior: 'smooth' });
+
+            // Disable scroll after scrolling to section 2
+            setTimeout(function() {
+                document.body.style.overflow = 'hidden';
+            }, 600); // Adjust timeout based on scroll animation duration
+        });
+
+        // btn2 클릭 시 섹션 1으로 돌아가는 이벤트 추가
+        // document.querySelector('.btn02').addEventListener('click', function() {
+        //     document.getElementById('s0').scrollIntoView({ behavior: 'smooth' });
+        //     document.getElementById('s1').style.display = 'none'; // 섹션 2 숨기기
+        //     document.body.style.overflow = 'auto'; // 스크롤 복구
+        // });
+    });
+
+
+
+    
+    </script>
+</body>
+
+</html>

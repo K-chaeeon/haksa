@@ -64,7 +64,6 @@ body {
 
 .img {
     width: 100%;
-    margin: 20em auto auto auto;
     max-height: 670px;
     max-width: 1200px;
     position: static;
@@ -73,7 +72,7 @@ body {
 
     object-fit: contain;
     z-index: 0;
-    opacity: 0.5;
+    opacity: 0.3;
 
 }
 
@@ -112,8 +111,26 @@ body {
     box-shadow: 0px 0px 27px -9px rgba(0, 0, 0, 0.75);
 }
 
+ .cnv{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 100vh;    
+} 
 
+.cnv2{
 
+}
+
+#s1.show .wrap {
+    position: fixed; /* 화면을 고정시키기 위해 fixed 사용 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 중앙 정렬 */
+    width: 450px;
+    height: 540px;
+    margin: 0;
+}
 .wrap {
     /*상자 포지션*/
     position: absolute;
@@ -125,6 +142,8 @@ body {
     height: 540px;
     margin: 22em auto auto auto;
     border-radius: 0;
+    
+    
 }
 
 
@@ -161,7 +180,7 @@ input {
 
 
 /*탭*/
-.tabs {}
+
 
 .tabs h3 {
     float: left;
@@ -622,3 +641,4 @@ h2{
         padding-left: 10px;
         background-color: rgb(61, 135, 255);
     }
+    

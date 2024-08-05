@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Tabs Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            z-index: 0;
+        }
+
+        #s0 {
+            height: 100vh;
+        }
+
+        .con-b {
+            position: relative;
+            width: 700px;
+            height: 100%;
+            background: rgb(0, 255, 13);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .boxcenter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30%;
+            height: 30%;
+            text-align: center;
+            transform: translate(-50%, -50%)
+        }
+
+
+        .container {
+            width: 500px;
+            height: 700px;
+            border: none;
+            display: flex;
+            flex-direction: column;
+        }
+.container2{
+           width: 500px;
+            height: 700px;
+            border: none;
+            display: flex;
+            flex-direction: column;
+}
+        .tabs {
+            display: flex;
+            
+        }
+
+        .tab {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            background: #ffffff66;
+            /* 탭의 배경 색상 */
+            color: #fff;
+            /* 기본 텍스트 색상 */
+            border: none;
+            /* 테두리 제거 */
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .tab.active {
+            background-color: #00000082;
+            /* 활성화된 탭의 배경 색상 */
+            color: #ffffff;
+            /* 활성화된 탭의 텍스트 색상 */
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            background: #00000082;
+            /* 내용 영역의 배경 색상 */
+            color: #ffffff;
+            /* 내용 영역의 텍스트 색상 */
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            /* 수평 중앙 정렬 */
+            align-items: center;
+            /* 수직 중앙 정렬 */
+        }
+
+        .content-item {
+            display: none;
+            text-align: center;
+            /* 텍스트 중앙 정렬 */
+        }
+
+        .content-item.active {
+            display: block;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 폼 요소를 중앙 정렬 */
+            width: 100%;
+            /* 폼의 너비를 100%로 설정 */
+            max-width: 450px;
+            /* 폼의 최대 너비 설정 */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+            /* 인풋 박스를 폼 너비에 맞춤 */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 350px;
+            /* 인풋 박스 너비를 폼 너비에 맞춤 */
+            max-width: 350px;
+            /* 인풋 박스 최대 너비 설정 */
+            height: 40px;
+            /* 인풋 박스 높이 */
+            padding: 0 10px;
+            border: none;
+            /* 테두리 제거 */
+            background: #333;
+            /* 입력 박스 배경 색상 */
+            color: #fff;
+            /* 입력 박스 텍스트 색상 */
+            font-size: 16px;
+            /* 입력 박스 텍스트 크기 */
+        }
+
+        #remember-me {
+            width: 20px;
+            height: 20px;
+
+        }
+
+        .forget {
+            float: left;
+        }
+
+
+        .line {
+            display: flex;
+            flex-basis: 100%;
+            align-items: center;
+            color: rgba(0, 0, 0, 0.35);
+            font-size: 14px;
+        }
+
+        .line::before {
+            content: "";
+            flex-grow: 20px;
+            margin: 0px 16px;
+            background: rgba(0, 0, 0, 0.35);
+            height: 1px;
+            font-size: 0px;
+            line-height: 0px;
+            width: 100px;
+
+
+        }
+
+        .line::after {
+            content: "";
+            flex-grow: 1;
+            margin: 0px 16px;
+            background: rgba(0, 0, 0, 0.35);
+            height: 1px;
+            font-size: 0px;
+            line-height: 0px;
+            width: 100px;
+        }
+
+        .sns-wrap {
+            margin-top: 1em;
+            margin-bottom: 2em;
+            display: flex;
+            flex-basis: 100%;
+        }
+
+        .KKO {
+            height: 40px;
+            padding-right: 20px;
+
+
+        }
+
+        .GGL {
+            height: 40px;
+            padding-right: 20px;
+
+        }
+
+
+        button {
+            margin-top: 30px;
+            padding: 15px;
+            width: 20vw;
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+            /* 버튼과 인풋 박스 사이에 여백 추가 */
+        }
+
+        button:hover {
+            background-color: #00ae34;
+        }
+
+        /* 체크박스 그룹 스타일 */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            /* 체크박스와 라벨을 수직으로 중앙 정렬 */
+            justify-content: flex-start;
+            /* 체크박스와 라벨을 왼쪽으로 정렬 */
+            width: 100%;
+            /* 체크박스 그룹의 너비를 100%로 설정 */
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 5px;
+            /* 체크박스와 라벨 사이에 여백 추가 */
+        }
+
+        /* 비밀번호 입력 박스와 버튼 스타일 */
+        .password-group {
+            display: flex;
+            align-items: center;
+            /* 비밀번호 입력 박스와 버튼을 수직으로 중앙 정렬 */
+            width: 100%;
+            /* 비밀번호 입력 박스와 버튼의 너비를 100%로 설정 */
+        }
+
+        .password-container {
+            display: flex;
+            align-items: center;
+            /* 비밀번호 입력 박스와 버튼을 수직으로 중앙 정렬 */
+            width: 100%;
+            /* 비밀번호 입력 박스와 버튼의 너비를 100%로 설정 */
+        }
+
+        /* .password-container input[type="password"] {
+    flex: 1; }/* 비밀번호 입력 박스가 가능한 공간을 차지하도록 설정 */
+
+
+        /* .password-container button {
+    margin-left: 10px; 
+    padding: 0; 
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #007bff; 
+    font-size: 18px; 
+}
+
+.password-container button:hover {
+    color: #0056b3; 
+}
+ */
+
+        .Signw2 {
+            padding-bottom: 2px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="con-b">
+        <div id="boxcenter"></div>
+
+        <div class="container">
+            <section id="s0">
+<div class="container2">
+
+                <div class="tabs">
+                    <div class="tab" id="tab1">Login</div>
+                    <div class="tab" id="tab2">Order Lookup</div>
+                </div>
+                <div class="content">
+                    <div class="content-item" id="content1">
+                        <h2>Login</h2>
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <!-- <label for="login-username">Username:</label> -->
+                                <input type="text" id="login-username" name="username" placeholder="Enter your username"
+                                    required>
+                            </div>
+                            <div class="form-group password-group">
+                                <!-- <label for="login-password">Password:</label> -->
+                                <div class="password-container">
+                                    <input type="password" id="login-password" name="password"
+                                        placeholder="Enter your password" required>
+                                    <!-- <button type="button" id="toggle-password" aria-label="Show password">
+                                <i class="fas fa-eye" id="toggle-icon"></i>
+                            </button> -->
+                                </div>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="remember-me" name="remember-me">
+                                <label for="remember-me">Remember me</label>
+                            </div>
+                            <div class="help">
+                                <p>
+                                    <a class="forgot" aria-hidden="true" href="#">Forgot
+                                        your
+                                        password?</a>
+                                </p>
+                            </div>
+
+                            <div class="line">
+                                OR
+                            </div>
+
+                            <div class="sns-wrap">
+                                <div class="login-sns">
+                                    <a href=""><img class="KKO" src="K.webp"></img></a>
+                                    <a href=""><img class="GGL" src="G.png"></img></a>
+                                    <a href=""><img class="NVR" src="N.png" width="40"></img></a>
+
+                                </div>
+                            </div>
+
+
+
+                            <button type="submit">Login</button>
+                        </form>
+                        <div class="Signw2">
+                            <p><a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't Have an
+                                    Account?</a>
+                            </p>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="content-item" id="content2">
+                        <h2>Order Lookup</h2>
+                        <form id="orderLookupForm">
+                            <div class="form-group">
+                                <!-- <label for="name">Name:</label> -->
+                                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="phone">Phone Number:</label> -->
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="order-id">Order Number:</label> -->
+                                <input type="text" id="order-id" name="order-id" placeholder="Enter your order number"
+                                    required>
+                            </div>
+                            <button type="submit">Lookup Order</button>
+                        </form>
+                        <div class="Signw2">
+                            <p><a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't Have an
+                                    Account?</a>
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            </section>
+
+
+            <section id="s1">
+
+            <!--회원가입창-->
+
+            </section>
+
+
+            <section id="s2">
+
+                <!--아디비번찾기-->
+    
+                </section>
+    
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+    <script>
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.content-item');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.id.replace('tab', 'content');
+
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+
+                    tab.classList.add('active');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // Activate the first tab by default
+            tabs[0].click();
+
+            // Toggle password visibility
+            const passwordField = document.getElementById('login-password');
+            const togglePasswordButton = document.getElementById('toggle-password');
+            const toggleIcon = document.getElementById('toggle-icon');
+
+            togglePasswordButton.addEventListener('click', () => {
+                const type = passwordField.type === 'password' ? 'text' : 'password';
+                passwordField.type = type;
+                toggleIcon.classList.toggle('fa-eye', type === 'password');
+                toggleIcon.classList.toggle('fa-eye-slash', type === 'text');
+            });
+        });
+
+
+        document.getElementById('s-u').addEventListener('click', function () {
+            document.getElementById('s1').style.display = 'flex'; // Use flex to center
+            document.body.style.overflow = 'auto';
+            document.getElementById('s1').scrollIntoView({ behavior: 'smooth' });
+
+            // Disable scroll after scrolling to section 2
+            setTimeout(function () {
+                document.body.style.overflow = 'hidden';
+            }, 600); // Adjust timeout based on scroll animation duration
+        });
+
+    </script>
+</body>
+
+</html>

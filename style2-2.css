@@ -6,11 +6,11 @@
 }
 
 
-@media all and (max-width: 1200px) {
+/* @media all and (max-width: 1200px) {
     .wrap-img .nv {
         display: none;
     }
-}
+} */
 
 /* .section0{
     height: 1300px;
@@ -21,28 +21,34 @@
 
 html {
     scroll-behavior: smooth;
+    height: 100%;
+
 }
 
-#s0{
-    height: 100vh;
-}
 
 * {
     margin: 0;
     padding: 0;
 }
 
+
 body {
     position: relative;
     font: 16px/26px "Raleway", sans-serif;
     text-align: center;
-    background-image: url("bb.PNG");
-    background-position: center center;
-    background-size: cover;
+    /* background-image: url("bb.PNG");
+    background-position: center center; */
+    /* background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;    
+    background-attachment: fixed;     */
     overflow: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
+
+
+
 .container-b { 
     position: relative;
     width:700px;
@@ -56,57 +62,24 @@ body {
    left:50%;
    width:30%;
    height:30%;
-   background:blue;
    text-align:center;
    transform: translate(-50%, -50%)
  }
-.wrap{
-  /*상자 포지션*/
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
-  height: 100vh;   
-  width: 100vw;
-}
-.user {
-    /*상자*/
-    width: 450px;
-    height: 540px;
-    background: #2529347c;
+
+
+.con-wrap{
+    margin: 25px;
+    width: 350px;
+    height: 200px;
     /* 상하좌우 정중앙 정렬하기 */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 0;
-    border: 0;
-    overflow: hidden;
-
-}
-
-
-.a {
-    margin: 1em 0;
-    width: 90px;
-    display: inline-block;
-    padding: .2em 0em;
-    background-color: #5C6576;
-    border: none;
-    color: #999;
-    cursor: pointer;
-    text-align: center;
-    font-size: .8em;
-    border-radius: 30px 0 0 30px;
-    box-shadow: 0px 0px 27px -9px rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 
-/*탭*/
+ /*탭*/
 .wtabs{
     height: 70px;
     width: 100vw;
@@ -197,9 +170,6 @@ body {
 }
 
 
-.orderV-form {
-    padding-top: 50px;
-}
 
 /*체크박스*/
 .tabs-content form .checkbox {
@@ -259,8 +229,13 @@ input[type="checkbox"]:checked+label.re {
 
 .sns-wrap{
     float: center;
-    
-    margin: .1em auto .1em 0;
+    top:50%;
+    left:50%;
+    right: 50%;
+    width:30%;
+    height:30%;
+    align-items:center;
+    transform: translate(-50%, -50%)
 }
 
 .login-sns .KKO{

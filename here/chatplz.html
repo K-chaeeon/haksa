@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'ChosunLo';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunLo.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        /* @media all and (max-width: 1200px) {
+            .wrap-img .nv {
+                display: none;
+            }
+        } */
+
+        /* .section0{
+            height: 1300px;
+        }
+        .section1{
+            height: 1300px;
+        } */
+
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            position: relative;
+            font: 16px/26px "Raleway", sans-serif;
+            text-align: center;
+            /* background-image: url("bb.PNG");
+            background-position: center center; */
+            /* background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;     */
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+
+
+        .con-b {
+            position: relative;
+            width: 700px;
+            height: 100%;
+            background: rgb(0, 255, 13);
+            margin: 0 auto;
+        }
+
+        .boxcenter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30%;
+            height: 30%;
+            text-align: center;
+            transform: translate(-50%, -50%)
+        }
+
+        .new-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 700px;
+            background-color: rgba(255, 255, 255, 0.849);
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            /* Ensure this box is above the other content */
+        }
+
+        .form-wrap {}
+
+        .form-wrap .tabs-content {
+            padding: 1.5em 2.5em;
+        }
+
+
+        input {
+            font: 16px/26px sans-serif;
+        }
+
+        .form-wrap {
+            width: 100%;
+            margin: 40px 0 0;
+            padding: 0;
+        }
+
+        .form-wrap a {
+            color: #ccc;
+            padding-bottom: 4px;
+            text-decoration-color: #04BEBD;
+        }
+
+        .login-form {
+            padding-top: 50px;
+
+        }
+
+
+        /*탭*/
+
+
+        .tabs h3 {
+            float: left;
+            width: 50%;
+            margin: 0;
+
+        }
+
+        .tabs h3 a {
+            padding: 0.5em 0;
+            text-align: center;
+            font-weight: 400;
+            display: block;
+            color: #868985;
+            border: 0;
+        }
+
+        .tabs h3 a.active {
+            color: #ffffff;
+        }
+
+        .tabs h3 a.active span {
+            padding-bottom: 4px;
+            border-bottom: 1px rgb(0, 255, 13);
+        }
+
+
+        .tabs-content div[id$="tab-content"] {
+            display: none;
+        }
+
+        .tabs-content .active {
+            display: block !important;
+        }
+
+
+
+        /*입력란*/
+
+        .form-wrap form .input {
+            margin: 0 0 .8em 0;
+            padding: .8em 2em 10px 1em;
+            width: 100%;
+            display: inline-block;
+            background: #30373F;
+            border: 0;
+            border-bottom: 0px solid #5A6374;
+            outline: 0;
+            box-sizing: border-box;
+            color: inherit;
+            font-family: inherit;
+            color: #fff;
+        }
+
+        .tabs-content form .button {
+            margin: 5px auto auto auto;
+            padding: 10px 8em;
+            /* width: 50%; */
+            display: block;
+            background-color: rgb(40, 185, 47);
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 20px;
+            font-display: center;
+            border-radius: 0;
+
+            box-shadow: 0px 0px 37px -9px rgba(0, 0, 0, 0.75);
+        }
+
+        .tabs-content form .button:hover {
+            background-color: #30373F;
+        }
+
+
+        .orderV {
+            padding: 0 0 0 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .log-in {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /*체크박스*/
+        .tabs-content form .checkbox {
+            margin: 0 0 1em 1em;
+            padding: 20px;
+            text-align: left;
+
+        }
+
+        .check {
+            float: left;
+        }
+
+        label.re {
+            color: #849898;
+        }
+
+        input[type="checkbox"]:checked+label.re {
+            color: #489898;
+        }
+
+
+        .help-action {
+            padding: 100px 0 0 0;
+        }
+
+        .line {
+            display: flex;
+            flex-basis: 100%;
+            align-items: center;
+            color: rgba(225, 219, 219, 0.35);
+            font-size: 14px;
+            margin: 8px 0px;
+        }
+
+        .line::before {
+            content: "";
+            flex-grow: 1;
+            margin: 0px 16px;
+            background: rgba(225, 219, 219, 0.35);
+            height: 1px;
+            font-size: 0px;
+            line-height: 0px;
+        }
+
+        .line::after {
+            content: "";
+            flex-grow: 1;
+            margin: 0px 16px;
+            background: rgba(225, 219, 219, 0.35);
+            height: 1px;
+            font-size: 0px;
+            line-height: 0px
+        }
+
+
+
+        .sns-wrap {
+            float: center;
+
+            margin: .1em auto .1em 0;
+        }
+
+        .login-sns .KKO {
+            height: 40px;
+            padding-right: 20px;
+
+
+        }
+
+        .login-sns.GGL {
+            height: 40px;
+        }
+
+        /* .login-sns.NVR{
+    height: 40px;
+padding: 0 30px 0 30px;
+} */
+
+        .help {
+            padding-top: 20px;
+        }
+
+        .Swing1 {
+            padding-top: 80px;
+        }
+
+        .Signw2 {
+            padding-top: 81px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="con-b">
+        <div id="boxcenter"></div>
+    </div>
+
+    <div class="new-box">
+
+        <div class="form-wrap">
+
+            <!-- TABS -->
+            <div class="tabs">
+                <h3><a href="#login-tab-content" class="log-in">Login</a></h3>
+                <h3><a href="#orderV-tab-content" class="orderV">Order</a></h3>
+            </div>
+
+            <div class="tabs-content">
+                <!-- TABS CONTENT LOGIN -->
+                <div id="login-tab-content" class="active">
+                    <form class="login-form" action="" method="post">
+                        <input type="text" class="input" id="user_login" autocomplete="off" placeholder="User ID">
+                        <input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
+                        <div class="check">
+                            <input type="checkbox" class="checkbox" checked id="remember_me">
+                            <label for="remember_me" class="re">Remember me</label>
+                        </div>
+                        <input type="submit" class="button" value="Login">
+                    </form>
+
+
+                    <div class="line">
+                        OR
+                    </div>
+
+                    <div class="sns-wrap">
+                        <div class="login-sns">
+                            <a href=""><img class="KKO" src="K.webp"></img></a>
+                            <a href=""><img class="GGL" src="G.png"></img></a>
+                            <a href=""><img class="GGL" src="N.png" width="40"></img></a>
+
+                        </div>
+                    </div>
+
+                    <div class="help">
+                        <p>
+                            <a class="forgot" aria-hidden="true" href="#">Forgot
+                                your
+                                password?</a>
+                        </p>
+                    </div>
+                    <div class="Signw1">
+                        <p>
+                            <a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't Have an
+                                Account?</a>
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- TABS CONTENT order -->
+                <div id="orderV-tab-content">
+                    <form class="orderV-form" action="" method="post">
+                        <input type="email" class="input" id="user_email" autocomplete="off" placeholder="Name">
+                        <input type="text" class="input" id="user_name" autocomplete="off" placeholder="Phone">
+                        <input type="password" class="input" id="user_pass" autocomplete="off"
+                            placeholder="Order Number">
+                        <input type="submit" class="button" value="Search">
+                    </form>
+
+                </div>
+            </div>
+            <div class="Signw2">
+                <p><a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't Have an Account?</a>
+                </p>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 탭 링크를 가져옵니다.
+            const tabLinks = document.querySelectorAll('.tabs h3 a');
+
+            // 탭 클릭 이벤트를 추가합니다.
+            tabLinks.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    // 현재 활성화된 탭 링크와 탭 콘텐츠를 찾습니다.
+                    const currentActiveLink = document.querySelector('.tabs h3 a.active');
+                    const currentActiveContent = document.querySelector('.tabs-content .active');
+
+                    if (currentActiveLink) {
+                        currentActiveLink.classList.remove('active');
+                    }
+
+                    if (currentActiveContent) {
+                        currentActiveContent.classList.remove('active');
+                    }
+
+                    // 클릭된 탭 링크에 active 클래스를 추가합니다.
+                    this.classList.add('active');
+
+                    // 클릭된 탭 링크에 해당하는 콘텐츠를 표시합니다.
+                    const targetContentId = this.getAttribute('href');
+                    const targetContent = document.querySelector(targetContentId);
+                    targetContent.classList.add('active');
+                });
+            });
+
+
+
+            document.getElementById('s-u').addEventListener('click', function () {
+                document.getElementById('s1').style.display = 'flex'; // Use flex to center
+                document.body.style.overflow = 'auto';
+                document.getElementById('s1').scrollIntoView({ behavior: 'smooth' });
+
+                // Disable scroll after scrolling to section 2
+                setTimeout(function () {
+                    document.body.style.overflow = 'hidden';
+                }, 600); // Adjust timeout based on scroll animation duration
+            });
+
+            // btn2 클릭 시 섹션 1으로 돌아가는 이벤트 추가
+            // document.querySelector('.btn02').addEventListener('click', function() {
+            //     document.getElementById('s0').scrollIntoView({ behavior: 'smooth' });
+            //     document.getElementById('s1').style.display = 'none'; // 섹션 2 숨기기
+            //     document.body.style.overflow = 'auto'; // 스크롤 복구
+            // });
+        });
+
+
+    </script>
+
+</body>
+
+</html>

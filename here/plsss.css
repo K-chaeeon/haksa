@@ -1,0 +1,184 @@
+.tabs {
+    margin-top: 50px;
+    padding-bottom: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    margin: 0 auto;}
+  
+  /* 탭 스타일 */
+  .tab_item {
+    width: (100%/2);
+    height: 50px;
+    border-bottom: 3px solid #333333;;
+    background-color: #f8f8f8;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    color: #333333;
+    display: block;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+  .tab_item:hover {
+    opacity: 0.75;
+  }
+  
+  /* 라디오 버튼 UI삭제*/
+  input[name="tab_item"] {
+    display: none;
+  }
+  
+  /* 탭 컨텐츠 스타일 */
+  .tab_content {
+    display: none;
+    padding: 40px 40px 0;
+    clear: both;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 700px;
+    background-color: rgba(255, 255, 255, 0.849);
+    transform: translate(-50%, -50%);
+
+  }
+  
+  
+  /* 선택 된 탭 콘텐츠를 표시 */
+  #all:checked ~ #all_content,
+  #programming:checked ~ #programming_content,
+  #design:checked ~ #design_content {
+    display: block;
+  }
+  
+  /* 선택된 탭 스타일 */
+  .tabs input:checked + .tab_item {
+    background-color: rgb(0, 255, 13);
+    color: #d4f4d1;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+  <div class="tab">
+  <ul class="tabnav">
+    <li><a href="#tab01">로그인</a></li>
+    <li><a href="#tab02">주문조회</a></li>
+  </ul>
+  <div class="tabcontent">
+    <div id="tab01">
+    
+    <form class="login-form" action="" method="post">
+                        <input type="text" class="input" id="user_login" autocomplete="off" placeholder="User ID">
+                        <input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
+                        <div class="check">
+                            <input type="checkbox" class="checkbox" checked id="remember_me">
+                            <label for="remember_me" class="re">Remember me</label>
+                        </div>
+                        <input type="submit" class="button" value="Login">
+                    </form>
+
+
+                    <div class="line">
+                        OR
+                    </div>
+
+                    <div class="sns-wrap">
+                        <div class="login-sns">
+                            <a href=""><img class="KKO" src="K.webp"></img></a>
+                            <a href=""><img class="GGL" src="G.png"></img></a>
+                            <a href=""><img class="GGL" src="N.png" width="40"></img></a>
+
+                        </div>
+                    </div>
+
+                    <div class="help">
+                        <p>
+                            <a class="forgot" aria-hidden="true" href="#">Forgot
+                                your
+                                password?</a>
+                        </p>
+                    </div>
+                    <div class="Signw1">
+                        <p>
+                            <a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't Have an
+                                Account?</a>
+                        </p>
+                    </div>
+    
+    </div>
+    <div id="tab02">
+    
+    
+    <div class="tabs_content" id="order">
+    <div id="orderV-tab-content">
+        <form class="orderV-form" action="" method="post">
+            <input type="email" class="input" id="user_email" autocomplete="off" placeholder="Name">
+            <input type="text" class="input" id="user_name" autocomplete="off" placeholder="Phone">
+            <input type="password" class="input" id="user_pass" autocomplete="off"
+                placeholder="Order Number">
+            <input type="submit" class="button" value="Search">
+        </form>
+
+    </div>
+</div>
+</div>
+
+<div class="Signw2">
+<p><a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't Have an Account?</a>
+</p>
+</div>
+    
+    
+    
+    </div>
+  </div>
+</div><!--tab-->
+
+
+html,body {width:100%;  }
+body,div,ul,li{margin:0; padding:0;}
+ul,li {list-style:none;}
+
+/*tab css*/
+/* .tab{float:left; width:600px; height:290px;}
+.tabnav{font-size:0; width:600px; border:1px solid #ddd;}
+.tabnav li{display: inline-block;  height:46px; text-align:center; border-right:1px solid #ddd;}
+.tabnav li a:before{content:""; position:absolute; left:0; top:0px; width:100%; height:3px; }
+.tabnav li a.active:before{background:#7ea21e;}
+.tabnav li a.active{border-bottom:1px solid #fff;}
+.tabnav li a{ position:relative; display:block; background: #f8f8f8; color: #000; padding:0 30px; line-height:46px; text-decoration:none; font-size:16px;}
+.tabnav li a:hover,
+.tabnav li a.active{background:#fff; color:#7ea21e; }
+.tabcontent{padding: 20px; width:500; height:700px; border:1px solid #ddd; border-top:none;}
+
+
+
+$(function(){
+    $('.tabcontent > div').hide();
+    $('.tabnav a').click(function () {
+      $('.tabcontent > div').hide().filter(this.hash).fadeIn();
+      $('.tabnav a').removeClass('active');
+      $(this).addClass('active');
+      return false;
+    }).filter(':eq(0)').click();
+    }); */ 

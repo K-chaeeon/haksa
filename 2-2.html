@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+@font-face {
+    font-family: 'ChosunLo';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunLo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* @media all and (max-width: 1200px) {
+    .wrap-img .nv {
+        display: none;
+    }
+} */
+
+/* .section0{
+    height: 1300px;
+}
+.section1{
+    height: 1300px;
+} */
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    position: relative;
+    font: 16px/26px "Raleway", sans-serif;
+    text-align: center;
+    /* background-image: url("bb.PNG");
+    background-position: center center; */
+    /* background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;     */
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.container-b { 
+    position: relative;
+    width:700px;
+    height:100%;
+    background:rgb(0, 255, 13);
+    margin:0 auto;
+ }
+ .boxcenter{
+   position: absolute;
+   top:50%;
+   left:50%;
+   width:30%;
+   height:30%;
+   text-align:center;
+   transform: translate(-50%, -50%)
+ }
+
+
+</style>
+<body>
+
+
+
+    <div class="container-b">
+        <div id="boxcenter"></div>
+    </div>
+
+
+
+
+
+    <div class="container-form">
+
+        <!-- TABS -->
+        <div class="wtabs">
+            <div class="tabs">
+                <h3><a href="#login-tab-content" class="log-in">Login</a></h3>
+                <h3><a href="#orderV-tab-content" class="orderV">Order</a></h3>
+            </div>
+        </div>
+
+        <div class="tabs-content">
+            <div id="login-tab-content" class="active">
+                <form class="login-form" action="" method="post">
+                    <input type="text" class="input" id="user_login" autocomplete="off" placeholder="User ID">
+                    <input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
+                    <div class="check">
+                        <input type="checkbox" class="checkbox" checked id="remember_me">
+                        <label for="remember_me" class="re">Remember me</label>
+                    </div>
+                    <input type="submit" class="button" value="Login">
+                </form>
+
+
+                <div class="line">
+                    OR
+                </div>
+
+                <div class="sns-wrap">
+                    <div class="login-sns">
+                        <a href=""><img class="KKO" src="K.webp" width="40"></img></a>
+                        <a href=""><img class="GGL" src="G.png" width="40"></img></a>
+                        <a href=""><img class="GGL" src="N.png" width="40"></img></a>
+
+                    </div>
+                </div>
+
+                <div class="help">
+                    <p>
+                        <a class="forgot" aria-hidden="true" href="#">Forgot
+                            your
+                            password?</a>
+                    </p>
+                </div>
+
+            </div>
+
+
+
+</body>
+
+</html>

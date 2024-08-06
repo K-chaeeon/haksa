@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 폼</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.signup-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.signup-form input,
+.signup-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.signup-form input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.signup-form button:hover {
+    background-color: #218838;
+}
+
+.signup-form input::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>회원가입</h1>
+        <form action="#" method="post" class="signup-form">
+            <label for="username">사용자 이름:</label>
+            <input type="text" id="username" name="username" placeholder="홍길동" required minlength="2" maxlength="20">
+
+            <label for="email">이메일:</label>
+            <input type="email" id="email" name="email" placeholder="example@example.com" required>
+
+            <label for="password">비밀번호:</label>
+            <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required minlength="8">
+
+            <label for="confirm-password">비밀번호 확인:</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="비밀번호를 다시 입력하세요" required minlength="8">
+
+            <label for="phone">연락처 번호:</label>
+            <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
+
+            <label for="address">배송지 주소:</label>
+            <input type="text" id="address" name="address" placeholder="서울특별시 강남구" required>
+
+            <label for="gender">성별:</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>성별을 선택하세요</option>
+                <option value="male">남성</option>
+                <option value="female">여성</option>
+                <option value="other">기타</option>
+            </select>
+
+            <label for="birthdate">생년월일:</label>
+            <input type="date" id="birthdate" name="birthdate" required max="2006-12-31">
+
+            <label for="newsletter">
+                <input type="checkbox" id="newsletter" name="newsletter">
+                뉴스레터 구독
+            </label>
+
+            <button type="submit">가입하기</button>
+        </form>
+    </div>
+</body>
+</html>

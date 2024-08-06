@@ -39,14 +39,19 @@
             box-sizing: border-box;
         }
 
-
+        section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
 
 
         /*-------------------*/
         main {
-            padding-top: 140px;
-
+            flex-direction: column
         }
 
 
@@ -140,9 +145,9 @@
 
         /*-------------------*/
 
-        #s0 {
+        /* #s0 {
             height: 100vh;
-        }
+        } */
 
         .con-b {
             padding-top: 50px;
@@ -173,23 +178,18 @@
 
         .container {
             border: 1px solid #000000;
-            box-shadow: 0xp 0px 5px 0px #000000;
+            width: 480px;
+            max-height: 600;
 
             border-width: 1px;
-            width: 500px;
             height: 600px;
             display: flex;
             flex-direction: column;
         }
 
-        /* .container2 {
-            margin: 20px;
-            width: 500px;
-            height: 700px;
-            border: none;
-            display: flex;
-            flex-direction: column;
-        } */
+        .container2 {
+            width: 480px;
+        }
 
         .tabs {
             display: flex;
@@ -212,9 +212,9 @@
             padding: 10px;
             text-align: center;
             cursor: pointer;
-            background: rgba(0, 255, 13, 0.199);
+            background: rgba(165, 115, 231, 0.306);
             /* 탭의 배경 색상 */
-            color: #999595;
+            color: #000000;
             /* 기본 텍스트 색상 */
             border: none;
             /* 테두리 제거 */
@@ -229,14 +229,15 @@
         }
 
         .Signw2 {
-            padding-top: 30px;
+            padding-top: 37px;
             text-decoration: overline;
+
         }
 
         .Signw3 {
             text-decoration: overline;
 
-            padding-top: 168px;
+            padding-top: 140px;
 
         }
 
@@ -251,7 +252,7 @@
 
 
         .content {
-
+            width: 478px;
             background: #ffffff;
             /* 내용 영역의 배경 색상 */
             color: #000000;
@@ -290,7 +291,7 @@
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             width: 100%;
             /* 인풋 박스를 폼 너비에 맞춤 */
         }
@@ -312,7 +313,26 @@
             /* 테두리 제거 */
             background: #ffffff;
             /* 입력 박스 배경 색상 */
-            color: #fff;
+            color: #000000;
+            /* 입력 박스 텍스트 색상 */
+            font-size: 16px;
+            /* 입력 박스 텍스트 크기 */
+            border: 0.5px solid #000000;
+        }
+
+        #name-o {
+            width: 350px;
+            /* 인풋 박스 너비를 폼 너비에 맞춤 */
+            max-width: 350px;
+            /* 인풋 박스 최대 너비 설정 */
+            height: 40px;
+            /* 인풋 박스 높이 */
+            padding: 0 10px;
+            border: none;
+            /* 테두리 제거 */
+            background: #ffffff;
+            /* 입력 박스 배경 색상 */
+            color: #000000;
             /* 입력 박스 텍스트 색상 */
             font-size: 16px;
             /* 입력 박스 텍스트 크기 */
@@ -342,7 +362,6 @@
         .forg {
             font-size: 14px;
             /* Set font size to 12px */
-            float: right;
             /* Align text to the right */
 
         }
@@ -385,8 +404,8 @@
         }
 
         .sns-wrap {
-            margin-top: .6em;
-            margin-bottom: 1em;
+            margin-top: .1em;
+            margin-bottom: .5em;
             display: flex;
             flex-basis: 100%;
             padding-top: 10px;
@@ -409,7 +428,7 @@
         .log-button {
             margin-top: 30px;
             padding: 15px;
-            width: 20vw;
+            width: 280px;
             background-color: #ffffff;
             color: #000000;
             border: 1px solid #000000;
@@ -424,7 +443,7 @@
         .lookup-button {
             margin-top: 30px;
             padding: 15px;
-            width: 20vw;
+            width: 280px;
             background-color: #ffffff;
             color: #000000;
             border: 1px solid #000000;
@@ -432,7 +451,6 @@
             cursor: pointer;
             font-size: 20px;
             transition: background-color 0.3s;
-            margin-top: 10px;
 
         }
 
@@ -496,7 +514,7 @@
 
 
         /* .password-container input[type="password"] {
-    flex: 1; }/* 비밀번호 입력 박스가 가능한 공간을 차지하도록 설정 */
+    flex: 1; }/* 비밀번호 입력 박스가 가능한 공간을 차지하도록 */
 
 
         /* .password-container button {
@@ -517,15 +535,424 @@
         .forg {
             padding-bottom: 0px 10px 0px 2px;
         }
+
+
+        /*==============================================================================================*/
+
+
+
+
+        h2 {
+            text-align: center;
+            padding-bottom: 60px;
+            color: #000000;
+
+        }
+
+        .table {
+            border: 1px solid #000000;
+            width: 480px;
+            max-height: 600;
+
+            border-width: 1px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .page2 {
+            position: static;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 450px;
+            height: 540px;
+            border-radius: 0;
+            padding-top: 90em;
+        }
+
+        .u-box {
+            /*상자*/
+            background: #ffff;
+
+            object-fit: contain;
+            box-shadow: none;
+            border: 1px solid #000000;
+            padding: 35px 50px 50px 50px;
+            margin-top: 20%;
+            width: 500px;
+            height: 80%;
+            overflow: hidden;
+            font-family: #000000;
+
+        }
+
+        .u-box td {
+            text-align: left;
+        }
+
+        /*상자 포지션*/
+        /* .wrap2 {
+        position: static;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 700px;
+    height: 540px;
+    margin: auto;
+    border-radius: 0;
+    } */
+
+
+        .s-form-wrap {
+            margin: 50px 0 0;
+            padding: 1.5em 0 0;
+        }
+
+        .s-form-wrap .tabs-content {
+            padding: 1.5em 2.5em;
+        }
+
+
+
+        .s-form-wrap {
+            width: 100%;
+            margin: 40px 0 0;
+            padding: 0;
+        }
+
+        .s-form-wrap a {
+            color: #ccc;
+            padding-bottom: 4px;
+            text-decoration-color: #04BEBD;
+        }
+
+
+
+
+        .check {
+            float: left;
+        }
+
+        label.re {
+            color: #849898;
+        }
+
+        input[type="checkbox"]:checked+label.re {
+            color: #223e3e;
+        }
+
+        .login-box form a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            color: #03e9f4;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 40px;
+            letter-spacing: 4px
+        }
+
+
+        .ok .button {
+            margin: 50px auto auto auto;
+            padding: 10px 3em;
+            /* width: 50%; */
+            display: block;
+            background-color: #04BEBD;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 20px;
+            font-display: center;
+            border-radius: 0;
+
+            box-shadow: 0px 0px 37px -9px rgba(0, 0, 0, 0.75);
+        }
+
+        .ok .button:hover {
+            background-color: #0ba7a7;
+        }
+
+        .ok {
+            text-align: center;
+        }
+
+        input {
+            font: 16px/26px sans-serif;
+        }
+
+        .form-group2 {
+            margin-bottom: 30px;
+            width: 100%;
+            /* 인풋 박스를 폼 너비에 맞춤 */
+        }
+
+        table {
+            width: 500px;
+            height: 550px;
+            margin: auto;
+        }
+
+        #login-ID2 {
+            width: 250px;
+            float: left;
+            margin-bottom: 30px;
+            margin-left: 25px;
+
+        }
+
+        .form-group-a {
+            margin-bottom: 15px;
+            /* 인풋 박스를 폼 너비에 맞춤 */
+            align-items: left;
+            color: #000000;
+
+        }
+
+        .form-group2-2 {
+            margin-bottom: 30px;
+            /* 인풋 박스를 폼 너비에 맞춤 */
+            align-items: left;
+
+        }
+
+        .idbtn {
+
+            width: 90px;
+            height: 40px;
+            float: right;
+            margin-right: 25px;
+            background-color: rgb(165, 115, 231);
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            font-display: center;
+            border-radius: 0;
+        }
+
+        #name {
+            width: 43.5%;
+        }
+
+
+        #postal-code {
+            width: 200px;
+            float: left;
+            margin-left: 25px;
+
+        }
+
+        #detailed-address {
+            margin-bottom: 25px;
+        }
+
+        .search-btn {
+
+            width: 70px;
+            height: 35px;
+            margin-top: 2px;
+            margin-right: 80px;
+            background-color: #a8b1b1;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 12px;
+            font-display: center;
+            border-radius: 0;
+        }
+
+        #birthdate {
+            margin-bottom: 0;
+            width: 85%;
+            background-color: #fff;
+            color: #000000;
+            border: 1px solid #000000;
+            float: right;
+            margin-bottom: 30px;
+
+
+        }
+
+        .birth {
+            width: 94%;
+        }
+
+        .birth a {
+
+            font-display: center;
+            color: #000000;
+            font-size: 24px;
+        }
+
+
+
+        .e a {
+            float: none;
+            color: #000000;
+            padding-left: 4px;
+            text-align: center;
+        }
+
+        .email {
+            width: 41%;
+            padding-left: 10px;
+            display: inline-block;
+            background: #ffffff;
+            border: 1px solid #000000;
+            outline: 0;
+            box-sizing: border-box;
+            color: inherit;
+            font-family: inherit;
+            color: #000000;
+        }
+
+        /* 체크박스와 레이블을 한 줄에 정렬 */
+        .checkbox-group2 {
+            display: flex;
+        }
+
+        /* 체크박스 스타일 */
+        .checkbox-group2 input[type="checkbox"] {
+            margin-right: 10px;
+            /* 체크박스와 레이블 사이의 간격 조정 */
+        }
+
+        /* 레이블 스타일 */
+        .checkbox-group2 label {
+            margin: 0;
+            /* 레이블 기본 마진 제거 */
+        }
+
+        .checkbox2 {
+            padding: 50px;
+        }
+
+        select {
+
+            height: 40px;
+            padding: o 2em 10px 1em;
+            width: 41%;
+            display: inline-block;
+            background: #ffffff;
+            border: 1px solid #000000;
+
+            outline: 0;
+            box-sizing: border-box;
+            color: inherit;
+            font-family: inherit;
+            font-size: 15px;
+            color: #000000;
+        }
+
+        .textid {
+            margin: 0 0 2em 0;
+            padding: .8em 2em 10px 1em;
+            width: 70%;
+            display: inline-block;
+            background: #30373F;
+            border: 0;
+            border-bottom: 0px solid #5A6374;
+            outline: 0;
+            box-sizing: border-box;
+            color: inherit;
+            font-family: inherit;
+            color: #000000;
+        }
+
+        .btn0 {
+            padding: 5px 1em;
+            margin: 5px;
+            /* width: 50%; */
+            background-color: #04BEBD;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 15px;
+            font-display: center;
+            border-radius: 0;
+        }
+
+        .text {
+            margin: 0 0 2em 0;
+            padding: .8em 2em 10px 1em;
+            width: 100%;
+            display: inline-block;
+            background: #30373F;
+            border: 0;
+            border-bottom: 0px solid #5A6374;
+            outline: 0;
+            box-sizing: border-box;
+            color: inherit;
+            font-family: inherit;
+            color: #000000;
+        }
+
+        .button2 {
+            float: left;
+
+            margin: 0;
+        }
+
+        .btn {
+            margin-top: 30px;
+            padding: 15px;
+            width: 280px;
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #000000;
+
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s;
+
+        }
+
+        button:hover {
+            background-color: rgb(0, 255, 13);
+            width: 280px;
+        }
+
+        .btn2 {
+            margin-top: 30px;
+            padding: 15px;
+            width: 210px;
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #000000;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s;
+            text-align: center;
+
+
+        }
+
+        .btn2:hover {
+            background-color: rgba(100, 100, 100, 0.521);
+            width: 210px;
+            align-items: center;
+
+        }
+
+
+        .button {
+            text-align: center;
+        }
     </style>
 </head>
 
 
 <body>
-
     <!--헤더-->
     <header class="header">
-
         <!-- 우측 상단 메뉴 -->
         <ul class="top_menu">
             <!-- 로고 -->
@@ -575,21 +1002,16 @@
                 <li id="cs_category"><a href="#">고객지원</a></li>
             </ul>
         </nav>
-
-
-
     </header>
 
     <main class="main" role="main">
-        <div class="con-b">
-            <div class="box1"></div>
-            <div class="box2"></div>
-            <div id="boxcenter"></div>
-            <section id="s0">
+        <section id="s0">
+            <div class="con-b">
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div id="boxcenter"></div>
                 <div class="container">
-
                     <div class="container2">
-
                         <div class="tabs">
                             <div class="tab" id="tab1">Login</div>
                             <div class="tab" id="tab2">Order Lookup</div>
@@ -599,128 +1021,169 @@
                                 <h2>Login</h2>
                                 <form id="loginForm">
                                     <div class="form-group">
-                                        <!-- <label for="login-username">Username:</label> -->
                                         <input type="text" id="login-ID" name="ID" placeholder="ID" required>
                                     </div>
                                     <div class="form-group password-group">
-                                        <!-- <label for="login-password">Password:</label> -->
                                         <div class="password-container">
                                             <input type="password" id="login-password" name="password"
                                                 placeholder="password" required>
-                                            <!-- <button type="button" id="toggle-password" aria-label="Show password">
-                                        <i class="fas fa-eye" id="toggle-icon">○</i>
-                                     </button> -->
                                         </div>
                                     </div>
-
                                     <div class="form-group checkbox-group">
                                         <input type="checkbox" id="remember-me" name="remember-me">
                                         <label for="remember-me">Remember me</label>
-
                                     </div>
                                     <div class="help">
                                         <p class="forg">
                                             <a class="forgot" aria-hidden="true" href="#">Forgot your password?</a>
                                         </p>
                                     </div>
-
                                     <div class="line">
                                         OR
                                     </div>
-
                                     <div class="sns-wrap">
                                         <div class="login-sns">
-                                            <a href=""><img class="KKO" src="K.webp"></img></a>
-                                            <a href=""><img class="GGL" src="G.png"></img></a>
-                                            <a href=""><img class="NVR" src="N.png" width="40"></img></a>
-
+                                            <a href=""><img class="KKO" src="K.webp" alt="Kakao"></a>
+                                            <a href=""><img class="GGL" src="G.png" alt="Google"></a>
+                                            <a href=""><img class="NVR" src="N.png" width="40" alt="Naver"></a>
                                         </div>
                                     </div>
-
-
-
                                     <button type="submit" class="log-button">Login</button>
                                 </form>
                                 <div class="Signw2">
                                     <p><a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't
-                                            Have
-                                            an
-                                            Account?</a>
-                                    </p>
+                                            Have an Account?</a></p>
                                 </div>
-
                             </div>
-
-
-
                             <div class="content-item" id="content2">
                                 <h2>Order Lookup</h2>
                                 <form id="orderLookupForm">
                                     <div class="form-group">
-                                        <!-- <label for="name">Name:</label> -->
-                                        <input type="text" id="name" name="name" placeholder="name" required>
+                                        <input type="text" id="name-o" name="name" placeholder="name" required>
                                     </div>
                                     <div class="form-group">
-                                        <!-- <label for="phone">Phone Number:</label> -->
                                         <input type="tel" id="phone" name="phone" placeholder="phone number" required>
                                     </div>
                                     <div class="form-group">
-                                        <!-- <label for="order-id">Order Number:</label> -->
                                         <input type="text" id="order-id" name="order-id" placeholder="order number"
                                             required>
                                     </div>
-
                                     <button type="submit" class="lookup-button">Lookup Order</button>
                                     <div class="Signw3">
-                                        <p><a class="dont" href="#section1" id='s-u'
-                                                onclick="goToScroll('sign-up')">Don't
-                                                Have
-                                                an
-                                                Account?</a>
-                                        </p>
+                                        <p><a class="dont" href="#section1" id='s-u2'
+                                                onclick="goToScroll('sign-up')">Don't Have an Account?</a></p>
                                     </div>
                                 </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section id="s1">
+            <div class="sign-up">
+                <div class="wrap2">
+                    <div class="u-box"> <!--.user 사용하기-->
+                        <div class="s-form-wrap">
+
+                            <!--아이디/비밀번호/비밀번호확인/이름/주소/일반전화/휴대전화/이메일-->
+                            <div class="sign-in-box">
+
+
+                                <form action="login.html">
+
+                                    <h2>회원가입</h2>
+
+                                    <div class="ok">
+
+                                        <div class="form-group2-2">
+                                            <input type="text" id="login-ID2" name="ID" placeholder="ID" required>
+
+                                            <input type="submit" value="중복확인" class="idbtn">
+
+
+
+                                        </div>
+
+
+                                        <div class="form-group2">
+                                            <input type="password" id="login-password" name="password"
+                                                placeholder="password" required>
+                                        </div>
+                                        <div class="form-group2">
+                                            <input type="password" id="login-password" name="password"
+                                                placeholder="confirm password " required>
+                                        </div>
+                                        <div class="form-group2">
+                                            <input type="text" id="name" name="name" placeholder="name" required>
+                                            <input type="text" id="name" name="name" placeholder="nickname" required>
+
+                                        </div>
+
+                                        <div class="form-group-a">
+                                            <input type="text" id="postal-code" name="postal-code" placeholder="우편번호"
+                                                required>
+                                            <input type="submit" value="검색" class="search-btn">
+                                        </div>
+                                        <div class="form-group-a">
+                                            <input type="text" id="address" name="address" placeholder="주소" required>
+                                        </div>
+                                        <div class="form-group-a">
+                                            <input type="text" id="detailed-address" name="detailed-address"
+                                                placeholder="상세주소" required>
+                                        </div>
+
+
+                                        <div class="form-group-a">
+                                            <input type="text" class="email" id="email" name="email" placeholder="email"
+                                                required> <a>@</a>
+                                            <select>
+                                                <option>naver.com</option>
+                                                <option>gmail.com</option>
+                                                <option>daum.net</option>
+                                                <option>nate.com</option>
+                                            </select>
+                                        </div>
+                                        <div id="checkbox2">
+                                            <div class="form-group checkbox-group2">
+                                                <input type="checkbox" id="remember-me" name="remember-me">
+                                                <label for="Receive Email Notification">Receive Email
+                                                    Notification</label>
+                                            </div>
+                                        </div>
+                                        <div class="birth">
+                                            <div class="form-group2">
+                                                <a>🎂</a>
+                                                <input type="date" class="text" id="birthdate" name="birthdate"
+                                                    required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <button type="submit" class="btn">Login</button>
+                                        <button type="button" class="btn2" id="back-button">Back</button>
+
+
+                                    </div>
+
+                                </form>
+                                </table>
                             </div>
 
 
                         </div>
                     </div>
-
-            </section>
-
-
-            <section id="s1">
-
-                <!--회원가입창-->
-
-            </section>
-
-
-            <section id="s2">
-
-                <!--아디비번찾기-->
-
-            </section>
-
-            <div class="Signw2">
-                <p><a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't Have
-                        an
-                        Account?</a>
-                </p>
+                </div>
             </div>
+        </section>
 
-
-
-        </div>
-        </div>
-
-
+        <section id="s2">
+            <!--아디비번찾기-->
+        </section>
     </main>
 
     <script>
-
-
         document.addEventListener('DOMContentLoaded', () => {
             const tabs = document.querySelectorAll('.tab');
             const contents = document.querySelectorAll('.content-item');
@@ -753,11 +1216,11 @@
             // });
         });
 
-
         document.getElementById('s-u').addEventListener('click', function () {
             document.getElementById('s1').style.display = 'flex'; // Use flex to center
             document.body.style.overflow = 'auto';
             document.getElementById('s1').scrollIntoView({ behavior: 'smooth' });
+
 
             // Disable scroll after scrolling to section 2
             setTimeout(function () {
@@ -765,7 +1228,27 @@
             }, 600); // Adjust timeout based on scroll animation duration
         });
 
+        document.getElementById('s-u2').addEventListener('click', function () {
+            document.getElementById('s1').style.display = 'flex'; // Use flex to center
+            document.body.style.overflow = 'auto';
+            document.getElementById('s1').scrollIntoView({ behavior: 'smooth' });
+
+
+            // Disable scroll after scrolling to section 2
+            setTimeout(function () {
+                document.body.style.overflow = 'hidden';
+            }, 600); // Adjust timeout based on scroll animation duration
+        });
+
+        document.getElementById('back-button').addEventListener('click', function () {
+            document.getElementById('s0').scrollIntoView({ behavior: 'smooth' });
+            document.body.style.overflow = 'hidden'; // Disable scroll
+        });
+
+
+
     </script>
 </body>
+
 
 </html>

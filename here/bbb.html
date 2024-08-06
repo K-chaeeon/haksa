@@ -6,30 +6,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Two Tabs Example</title>
     <style>
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'neurimboGothicRegular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/neurimboGothicRegular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
         body {
-            font-family: Arial, sans-serif;
+            /* font-family: Arial, sans-serif; */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             margin: 0;
             z-index: 0;
+            
+            
+
         }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+  
+  
+
+        /*-------------------*/
+        main{
+            padding-top: 140px;
+            
+        }
+
+
+        header {
+            position: fixed;
+            top: 0;
+            /* width: 100% */
+            left: 0;
+            right: 0;
+
+        }
+
+        /*a태그 하이퍼링크*/
+        a {
+            text-decoration: none;
+            /*하이퍼링크 밑줄 제거*/
+            color: inherit;
+            /*하이퍼 링크 색상 제거 */
+        }
+
+        /* 우측 상단 메뉴 */
+        .top_menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            padding: 10px;
+            margin: 0;
+            color: #000000;
+            background-color: rgb(0, 255, 13);
+            justify-content: space-between;
+            /* 로고와 아이콘 사이에 공간 분배 */
+        }
+
+        /* 로고 */
+        .top_menu .logo {
+            font-family: 'neurimboGothicRegular';
+            margin: 0 auto;
+            /* 좌우 여백을 자동으로 조정하여 중앙 정렬 */
+        }
+
+        /* 아이콘들 컨테이너 */
+        .top_menu .top_icons {
+            display: flex;
+            align-items: center;
+        }
+
+        /* 아이콘 */
+        .top_menu .top_icon {
+            margin: 0 5px;
+            /* 아이콘 사이의 여백 조정 */
+        }
+
+        /* 아이콘 중앙 수직 정렬 */
+        .top_menu .top_icon svg {
+            vertical-align: middle;
+        }
+
+        /*우측상단 검색, 마이페이지, 찜, 장바구니, 로그인_글자 속성*/
+        .sign li {
+            margin: 0 5px;
+            /*메뉴끼리의 사이 여백*/
+            /* text-align: center; /*텍스트 중앙 정렬
+    font-size: 0.6rem;
+    color: rgb(31, 218, 255); */
+        }
+
+        /*헤드폰, 이어폰, 사운드바, 스피커, 고객지원_박스 속성*/
+        .categories{
+            margin: 0px;
+    padding: 10px;
+    padding-bottom: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: center; /*가로로 중앙 정렬*/
+    background-color: rgb(0, 255, 13);
+}
+
+
+        /*헤드폰, 이어폰, 사운드바, 스피커, 고객지원_각 글자 속성*/
+        .categories li{
+    font-family: 'GmarketSansMedium';
+    text-align: center; /*텍스트 중앙 정렬*/
+    margin: 0 10px; /*각 글자 사이 여백*/
+    padding: 5px 20px; /*각 글자 박스 크기*/
+    color: #000000;
+}
+
+        /*-------------------*/
 
         #s0 {
             height: 100vh;
         }
-
-        .con-b {
-            position: relative;
-            width: 700px;
+.con-b{
+    padding-top: 50px;
+}
+        .box1 {
+     
+            width: 350px;
             height: 100%;
             background: rgb(0, 255, 13);
             display: flex;
             justify-content: center;
             align-items: center;
-        }
+     }
 
+/* 
         .boxcenter {
             position: absolute;
             top: 50%;
@@ -38,26 +161,30 @@
             height: 30%;
             text-align: center;
             transform: translate(-50%, -50%)
-        }
+        } */
 
 
         .container {
+        border: solid #000000;
+        border-width: 1px;
+            width: 500px;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* .container2 {
+            margin: 20px;
             width: 500px;
             height: 700px;
             border: none;
             display: flex;
             flex-direction: column;
-        }
-.container2{
-           width: 500px;
-            height: 700px;
-            border: none;
-            display: flex;
-            flex-direction: column;
-}
+        } */
+
         .tabs {
             display: flex;
-            
+
         }
 
         .tab {
@@ -65,9 +192,9 @@
             padding: 10px;
             text-align: center;
             cursor: pointer;
-            background: #ffffff66;
+            background: rgba(0, 255, 13, 0.199);
             /* 탭의 배경 색상 */
-            color: #fff;
+            color: #999595;
             /* 기본 텍스트 색상 */
             border: none;
             /* 테두리 제거 */
@@ -75,20 +202,18 @@
         }
 
         .tab.active {
-            background-color: #00000082;
+            background-color: rgb(0, 255, 13);
             /* 활성화된 탭의 배경 색상 */
-            color: #ffffff;
+            color: #000000;
             /* 활성화된 탭의 텍스트 색상 */
         }
 
         .content {
-            flex: 1;
-            padding: 20px;
-            background: #00000082;
+      
+            background: #ffffff;
             /* 내용 영역의 배경 색상 */
-            color: #ffffff;
+            color: #000000;
             /* 내용 영역의 텍스트 색상 */
-            overflow-y: auto;
             display: flex;
             justify-content: center;
             /* 수평 중앙 정렬 */
@@ -106,8 +231,8 @@
             display: block;
         }
 
-        h2 {
-            margin-top: 0;
+        .container2 h2 {
+            padding: 20px;
         }
 
         form {
@@ -150,6 +275,12 @@
             /* 입력 박스 텍스트 크기 */
         }
 
+        .loginForm input{
+            
+        }
+
+
+
         #remember-me {
             width: 20px;
             height: 20px;
@@ -157,8 +288,12 @@
         }
 
         .forget {
-            float: left;
-        }
+    font-size: 12px; /* Set font size to 12px */
+    text-align: right; /* Align text to the right */
+    display: block; /* Ensure it's a block element for text alignment */
+}
+
+        
 
 
         .line {
@@ -214,23 +349,34 @@
         }
 
 
-        button {
+        .log-button{
             margin-top: 30px;
             padding: 15px;
             width: 20vw;
             background-color: #ffffff;
             color: #000000;
-            border: none;
+            border: 1px solid #000000;
+
             cursor: pointer;
             font-size: 20px;
             transition: background-color 0.3s;
             margin-top: 10px;
-            /* 버튼과 인풋 박스 사이에 여백 추가 */
+            
         }
 
-        button:hover {
-            background-color: #00ae34;
+       button:hover {
+            background-color: rgb(0, 255, 13);
         }
+/* 
+        #toggle-password{
+
+            position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 5px;
+    border-radius: 15px;
+} */
+
 
         /* 체크박스 그룹 스타일 */
         .checkbox-group {
@@ -265,6 +411,11 @@
             /* 비밀번호 입력 박스와 버튼의 너비를 100%로 설정 */
         }
 
+        .form-group{
+            float: left;
+
+        }
+
         /* .password-container input[type="password"] {
     flex: 1; }/* 비밀번호 입력 박스가 가능한 공간을 차지하도록 설정 */
 
@@ -284,8 +435,8 @@
 }
  */
 
-        .Signw2 {
-            padding-bottom: 2px;
+        .forg {
+            padding-bottom: 0px 10px 0px 2px;
         }
     </style>
 </head>
@@ -293,112 +444,173 @@
 
 <body>
 
+    <!--헤더-->
+    <header class="header">
+
+        <!-- 우측 상단 메뉴 -->
+        <ul class="top_menu">
+            <!-- 로고 -->
+            <li class="logo">
+                <h1><a href="#">SOUNDS</a></h1>
+            </li>
+            <!-- 아이콘들 -->
+            <li class="top_icons">
+                <div class="top_icon" id="search_icon">
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 513.749 513.749"
+                            style="enable-background:new 0 0 513.749 513.749;" xml:space="preserve" width="20"
+                            height="20">
+                            <g>
+                                <path
+                                    d="M504.352,459.061l-99.435-99.477c74.402-99.427,54.115-240.344-45.312-314.746S119.261-9.277,44.859,90.15 S-9.256,330.494,90.171,404.896c79.868,59.766,189.565,59.766,269.434,0l99.477,99.477c12.501,12.501,32.769,12.501,45.269,0 c12.501-12.501,12.501-32.769,0-45.269L504.352,459.061z M225.717,385.696c-88.366,0-160-71.634-160-160s71.634-160,160-160 s160,71.634,160,160C385.623,314.022,314.044,385.602,225.717,385.696z" />
+                            </g>
+                        </svg></a>
+                </div>
+                <div class="top_icon" id="mypage_icon">
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve" width="20" height="20">
+                            <g>
+                                <circle cx="256" cy="128" r="128" />
+                                <path
+                                    d="M256,298.667c-105.99,0.118-191.882,86.01-192,192C64,502.449,73.551,512,85.333,512h341.333 c11.782,0,21.333-9.551,21.333-21.333C447.882,384.677,361.99,298.784,256,298.667z" />
+                            </g>
+                        </svg></a>
+                </div>
+                <div class="top_icon" id="basket_icon">
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1"
+                            viewBox="0 0 24 24" width="20" height="20">
+                            <path
+                                d="M23.27,9.03c-.57-.66-1.4-1.03-2.27-1.03h-.09C20.41,3.51,16.59,0,11.97,0S3.53,3.51,3.03,8h-.06c-.87,0-1.7,.38-2.27,1.03C.13,9.69-.12,10.56,0,11.42l1.06,7.42c.42,2.94,2.97,5.15,5.94,5.15h9.97c2.97,0,5.52-2.21,5.94-5.15l1.06-7.42c.12-.86-.13-1.73-.7-2.39ZM11.97,2c3.52,0,6.43,2.61,6.92,6H5.05c.49-3.39,3.4-6,6.92-6Z" />
+                        </svg></a>
+                </div>
+            </li>
+        </ul>
+        <!--네비 카테고리 대분류-->
+        <nav>
+            <ul class="categories">
+                <li id="headphones_category"><a href="#">헤드폰</a></li>
+                <li id="earphones_category"><a href="#">이어폰</a></li>
+                <li id="soundbar_category"><a href="#">사운드바</a></li>
+                <li id="speaker_category"><a href="#">스피커</a></li>
+                <li id="cs_category"><a href="#">고객지원</a></li>
+            </ul>
+        </nav>
+
+
+
+    </header>
+
+<main class="main" role="main">
     <div class="con-b">
+        <div class="box1"></div>
+        <div class="box2"></div>
         <div id="boxcenter"></div>
 
         <div class="container">
             <section id="s0">
-<div class="container2">
+                <div class="container2">
 
-                <div class="tabs">
-                    <div class="tab" id="tab1">Login</div>
-                    <div class="tab" id="tab2">Order Lookup</div>
-                </div>
-                <div class="content">
-                    <div class="content-item" id="content1">
-                        <h2>Login</h2>
-                        <form id="loginForm">
-                            <div class="form-group">
-                                <!-- <label for="login-username">Username:</label> -->
-                                <input type="text" id="login-username" name="username" placeholder="Enter your username"
-                                    required>
-                            </div>
-                            <div class="form-group password-group">
-                                <!-- <label for="login-password">Password:</label> -->
-                                <div class="password-container">
-                                    <input type="password" id="login-password" name="password"
-                                        placeholder="Enter your password" required>
-                                    <!-- <button type="button" id="toggle-password" aria-label="Show password">
-                                <i class="fas fa-eye" id="toggle-icon"></i>
-                            </button> -->
+                    <div class="tabs">
+                        <div class="tab" id="tab1">Login</div>
+                        <div class="tab" id="tab2">Order Lookup</div>
+                    </div>
+                    <div class="content">
+                        <div class="content-item" id="content1">
+                            <h2>Login</h2>
+                            <form id="loginForm">
+                                <div class="form-group">
+                                    <!-- <label for="login-username">Username:</label> -->
+                                    <input type="text" id="login-ID" name="ID"
+                                        placeholder="Enter your ID" required>
                                 </div>
-                            </div>
+                                <div class="form-group password-group">
+                                    <!-- <label for="login-password">Password:</label> -->
+                                    <div class="password-container">
+                                        <input type="password" id="login-password" name="password"
+                                            placeholder="Enter your password" required>
+                                        <!-- <button type="button" id="toggle-password" aria-label="Show password">
+                                        <i class="fas fa-eye" id="toggle-icon">○</i>
+                                     </button> -->
+                                    </div>
+                                </div>
 
-                            <div class="form-group checkbox-group">
-                                <input type="checkbox" id="remember-me" name="remember-me">
-                                <label for="remember-me">Remember me</label>
-                            </div>
-                            <div class="help">
-                                <p>
-                                    <a class="forgot" aria-hidden="true" href="#">Forgot
-                                        your
-                                        password?</a>
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="remember-me" name="remember-me">
+                                    <label for="remember-me">Remember me</label>
+                                    <p class="forg">
+                                        <a class="forgot" aria-hidden="true" href="#">Forgot your password?</a>
+                                    </p>
+                                </div>
+                                <div class="help">
+                                    
+                                </div>
+
+                                <div class="line">
+                                    OR
+                                </div>
+
+                                <div class="sns-wrap">
+                                    <div class="login-sns">
+                                        <a href=""><img class="KKO" src="K.webp"></img></a>
+                                        <a href=""><img class="GGL" src="G.png"></img></a>
+                                        <a href=""><img class="NVR" src="N.png" width="40"></img></a>
+
+                                    </div>
+                                </div>
+
+
+
+                                <button type="submit" class="log-button">Login</button>
+                            </form>
+                            <div class="Signw2">
+                                <p><a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't Have
+                                        an
+                                        Account?</a>
                                 </p>
                             </div>
 
-                            <div class="line">
-                                OR
-                            </div>
+                        </div>
 
-                            <div class="sns-wrap">
-                                <div class="login-sns">
-                                    <a href=""><img class="KKO" src="K.webp"></img></a>
-                                    <a href=""><img class="GGL" src="G.png"></img></a>
-                                    <a href=""><img class="NVR" src="N.png" width="40"></img></a>
 
+
+                        <div class="content-item" id="content2">
+                            <h2>Order Lookup</h2>
+                            <form id="orderLookupForm">
+                                <div class="form-group">
+                                    <!-- <label for="name">Name:</label> -->
+                                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
                                 </div>
+                                <div class="form-group">
+                                    <!-- <label for="phone">Phone Number:</label> -->
+                                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label for="order-id">Order Number:</label> -->
+                                    <input type="text" id="order-id" name="order-id"
+                                        placeholder="Enter your order number" required>
+                                </div>
+                                <button type="submit">Lookup Order</button>
+                            </form>
+                            <div class="Signw2">
+                                <p><a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't Have
+                                        an
+                                        Account?</a>
+                                </p>
                             </div>
-
-
-
-                            <button type="submit">Login</button>
-                        </form>
-                        <div class="Signw2">
-                            <p><a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't Have an
-                                    Account?</a>
-                            </p>
                         </div>
 
+
                     </div>
-
-
-
-                    <div class="content-item" id="content2">
-                        <h2>Order Lookup</h2>
-                        <form id="orderLookupForm">
-                            <div class="form-group">
-                                <!-- <label for="name">Name:</label> -->
-                                <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                            </div>
-                            <div class="form-group">
-                                <!-- <label for="phone">Phone Number:</label> -->
-                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <!-- <label for="order-id">Order Number:</label> -->
-                                <input type="text" id="order-id" name="order-id" placeholder="Enter your order number"
-                                    required>
-                            </div>
-                            <button type="submit">Lookup Order</button>
-                        </form>
-                        <div class="Signw2">
-                            <p><a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't Have an
-                                    Account?</a>
-                            </p>
-                        </div>
-                    </div>
-
-
                 </div>
-            </div>
 
             </section>
 
 
             <section id="s1">
 
-            <!--회원가입창-->
+                <!--회원가입창-->
 
             </section>
 
@@ -406,9 +618,9 @@
             <section id="s2">
 
                 <!--아디비번찾기-->
-    
-                </section>
-    
+
+            </section>
+
 
 
 
@@ -417,7 +629,7 @@
     </div>
 
 
-
+</main>
 
     <script>
 

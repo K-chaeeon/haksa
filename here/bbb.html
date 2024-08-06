@@ -28,25 +28,25 @@
             align-items: center;
             margin: 0;
             z-index: 0;
-            
-            
+
+
 
         }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
 
-  
-  
+
+
 
         /*-------------------*/
-        main{
+        main {
             padding-top: 140px;
-            
+
         }
 
 
@@ -114,45 +114,52 @@
         }
 
         /*헤드폰, 이어폰, 사운드바, 스피커, 고객지원_박스 속성*/
-        .categories{
+        .categories {
             margin: 0px;
-    padding: 10px;
-    padding-bottom: 20px;
-    list-style: none;
-    display: flex;
-    justify-content: center; /*가로로 중앙 정렬*/
-    background-color: rgb(0, 255, 13);
-}
+            padding: 10px;
+            padding-bottom: 20px;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            /*가로로 중앙 정렬*/
+            background-color: rgb(0, 255, 13);
+        }
 
 
         /*헤드폰, 이어폰, 사운드바, 스피커, 고객지원_각 글자 속성*/
-        .categories li{
-    font-family: 'GmarketSansMedium';
-    text-align: center; /*텍스트 중앙 정렬*/
-    margin: 0 10px; /*각 글자 사이 여백*/
-    padding: 5px 20px; /*각 글자 박스 크기*/
-    color: #000000;
-}
+        .categories li {
+            font-family: 'GmarketSansMedium';
+            text-align: center;
+            /*텍스트 중앙 정렬*/
+            margin: 0 10px;
+            /*각 글자 사이 여백*/
+            padding: 5px 20px;
+            /*각 글자 박스 크기*/
+            color: #000000;
+        }
 
         /*-------------------*/
 
         #s0 {
             height: 100vh;
         }
-.con-b{
-    padding-top: 50px;
-}
+
+        .con-b {
+            padding-top: 50px;
+
+        }
+
         .box1 {
-     
+
             width: 350px;
             height: 100%;
             background: rgb(0, 255, 13);
             display: flex;
             justify-content: center;
             align-items: center;
-     }
+        }
 
-/* 
+        /* 
         .boxcenter {
             position: absolute;
             top: 50%;
@@ -165,8 +172,10 @@
 
 
         .container {
-        border: solid #000000;
-        border-width: 1px;
+            border: 1px solid #000000;
+            box-shadow: 0xp 0px 5px 0px #000000;
+
+            border-width: 1px;
             width: 500px;
             height: 600px;
             display: flex;
@@ -187,6 +196,17 @@
 
         }
 
+        .help {
+            box-sizing: border-box;
+            background-color: rgba(0, 255, 13, 0.199);
+            padding: 10px 1px 1px 1px;
+
+        }
+
+        .help :hover {
+            text-decoration: underline;
+        }
+
         .tab {
             flex: 1;
             padding: 10px;
@@ -202,14 +222,36 @@
         }
 
         .tab.active {
-            background-color: rgb(0, 255, 13);
+            background-color: rgb(165, 115, 231);
             /* 활성화된 탭의 배경 색상 */
             color: #000000;
             /* 활성화된 탭의 텍스트 색상 */
         }
 
+        .Signw2 {
+            padding-top: 30px;
+            text-decoration: overline;
+        }
+
+        .Signw3 {
+            text-decoration: overline;
+
+            padding-top: 168px;
+
+        }
+
+        .Signw2 :hover {
+            text-decoration: underline;
+        }
+
+        .Signw3 :hover {
+            text-decoration: underline;
+
+        }
+
+
         .content {
-      
+
             background: #ffffff;
             /* 내용 영역의 배경 색상 */
             color: #000000;
@@ -224,6 +266,7 @@
         .content-item {
             display: none;
             text-align: center;
+            padding-top: 20px;
             /* 텍스트 중앙 정렬 */
         }
 
@@ -267,16 +310,25 @@
             padding: 0 10px;
             border: none;
             /* 테두리 제거 */
-            background: #333;
+            background: #ffffff;
             /* 입력 박스 배경 색상 */
             color: #fff;
             /* 입력 박스 텍스트 색상 */
             font-size: 16px;
             /* 입력 박스 텍스트 크기 */
+            border: 0.5px solid #000000;
         }
 
-        .loginForm input{
-            
+        #loginForm {
+            padding-top: 25px;
+
+        }
+
+
+        .forgot {
+            padding-top: 30px;
+
+
         }
 
 
@@ -287,13 +339,16 @@
 
         }
 
-        .forget {
-    font-size: 12px; /* Set font size to 12px */
-    text-align: right; /* Align text to the right */
-    display: block; /* Ensure it's a block element for text alignment */
-}
+        .forg {
+            font-size: 14px;
+            /* Set font size to 12px */
+            float: right;
+            /* Align text to the right */
 
-        
+        }
+
+
+
 
 
         .line {
@@ -302,6 +357,7 @@
             align-items: center;
             color: rgba(0, 0, 0, 0.35);
             font-size: 14px;
+            padding-top: 25px;
         }
 
         .line::before {
@@ -329,10 +385,11 @@
         }
 
         .sns-wrap {
-            margin-top: 1em;
-            margin-bottom: 2em;
+            margin-top: .6em;
+            margin-bottom: 1em;
             display: flex;
             flex-basis: 100%;
+            padding-top: 10px;
         }
 
         .KKO {
@@ -349,7 +406,7 @@
         }
 
 
-        .log-button{
+        .log-button {
             margin-top: 30px;
             padding: 15px;
             width: 20vw;
@@ -361,13 +418,30 @@
             font-size: 20px;
             transition: background-color 0.3s;
             margin-top: 10px;
-            
+
         }
 
-       button:hover {
-            background-color: rgb(0, 255, 13);
+        .lookup-button {
+            margin-top: 30px;
+            padding: 15px;
+            width: 20vw;
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #000000;
+
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+
         }
-/* 
+
+        button:hover {
+            background-color: rgb(0, 255, 13);
+            width: 280px;
+        }
+
+        /* 
         #toggle-password{
 
             position: absolute;
@@ -385,7 +459,7 @@
             /* 체크박스와 라벨을 수직으로 중앙 정렬 */
             justify-content: flex-start;
             /* 체크박스와 라벨을 왼쪽으로 정렬 */
-            width: 100%;
+            width: 350px;
             /* 체크박스 그룹의 너비를 100%로 설정 */
         }
 
@@ -396,25 +470,30 @@
 
         /* 비밀번호 입력 박스와 버튼 스타일 */
         .password-group {
-            display: flex;
-            align-items: center;
+            /* display: flex; */
+            /* align-items: center; */
             /* 비밀번호 입력 박스와 버튼을 수직으로 중앙 정렬 */
-            width: 100%;
+            /* width: 100%; */
             /* 비밀번호 입력 박스와 버튼의 너비를 100%로 설정 */
         }
 
         .password-container {
-            display: flex;
-            align-items: center;
+            /* display: flex; */
+            /* align-items: center; */
             /* 비밀번호 입력 박스와 버튼을 수직으로 중앙 정렬 */
-            width: 100%;
+            /* width: 100%; */
             /* 비밀번호 입력 박스와 버튼의 너비를 100%로 설정 */
         }
 
-        .form-group{
+        .form-group {
             float: left;
 
         }
+
+        #orderLookupForm {
+            padding-top: 25px;
+        }
+
 
         /* .password-container input[type="password"] {
     flex: 1; }/* 비밀번호 입력 박스가 가능한 공간을 차지하도록 설정 */
@@ -501,109 +580,112 @@
 
     </header>
 
-<main class="main" role="main">
-    <div class="con-b">
-        <div class="box1"></div>
-        <div class="box2"></div>
-        <div id="boxcenter"></div>
-
-        <div class="container">
+    <main class="main" role="main">
+        <div class="con-b">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div id="boxcenter"></div>
             <section id="s0">
-                <div class="container2">
+                <div class="container">
 
-                    <div class="tabs">
-                        <div class="tab" id="tab1">Login</div>
-                        <div class="tab" id="tab2">Order Lookup</div>
-                    </div>
-                    <div class="content">
-                        <div class="content-item" id="content1">
-                            <h2>Login</h2>
-                            <form id="loginForm">
-                                <div class="form-group">
-                                    <!-- <label for="login-username">Username:</label> -->
-                                    <input type="text" id="login-ID" name="ID"
-                                        placeholder="Enter your ID" required>
-                                </div>
-                                <div class="form-group password-group">
-                                    <!-- <label for="login-password">Password:</label> -->
-                                    <div class="password-container">
-                                        <input type="password" id="login-password" name="password"
-                                            placeholder="Enter your password" required>
-                                        <!-- <button type="button" id="toggle-password" aria-label="Show password">
+                    <div class="container2">
+
+                        <div class="tabs">
+                            <div class="tab" id="tab1">Login</div>
+                            <div class="tab" id="tab2">Order Lookup</div>
+                        </div>
+                        <div class="content">
+                            <div class="content-item" id="content1">
+                                <h2>Login</h2>
+                                <form id="loginForm">
+                                    <div class="form-group">
+                                        <!-- <label for="login-username">Username:</label> -->
+                                        <input type="text" id="login-ID" name="ID" placeholder="ID" required>
+                                    </div>
+                                    <div class="form-group password-group">
+                                        <!-- <label for="login-password">Password:</label> -->
+                                        <div class="password-container">
+                                            <input type="password" id="login-password" name="password"
+                                                placeholder="password" required>
+                                            <!-- <button type="button" id="toggle-password" aria-label="Show password">
                                         <i class="fas fa-eye" id="toggle-icon">○</i>
                                      </button> -->
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-group checkbox-group">
-                                    <input type="checkbox" id="remember-me" name="remember-me">
-                                    <label for="remember-me">Remember me</label>
-                                    <p class="forg">
-                                        <a class="forgot" aria-hidden="true" href="#">Forgot your password?</a>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="remember-me" name="remember-me">
+                                        <label for="remember-me">Remember me</label>
+
+                                    </div>
+                                    <div class="help">
+                                        <p class="forg">
+                                            <a class="forgot" aria-hidden="true" href="#">Forgot your password?</a>
+                                        </p>
+                                    </div>
+
+                                    <div class="line">
+                                        OR
+                                    </div>
+
+                                    <div class="sns-wrap">
+                                        <div class="login-sns">
+                                            <a href=""><img class="KKO" src="K.webp"></img></a>
+                                            <a href=""><img class="GGL" src="G.png"></img></a>
+                                            <a href=""><img class="NVR" src="N.png" width="40"></img></a>
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <button type="submit" class="log-button">Login</button>
+                                </form>
+                                <div class="Signw2">
+                                    <p><a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't
+                                            Have
+                                            an
+                                            Account?</a>
                                     </p>
                                 </div>
-                                <div class="help">
-                                    
-                                </div>
 
-                                <div class="line">
-                                    OR
-                                </div>
+                            </div>
 
-                                <div class="sns-wrap">
-                                    <div class="login-sns">
-                                        <a href=""><img class="KKO" src="K.webp"></img></a>
-                                        <a href=""><img class="GGL" src="G.png"></img></a>
-                                        <a href=""><img class="NVR" src="N.png" width="40"></img></a>
 
+
+                            <div class="content-item" id="content2">
+                                <h2>Order Lookup</h2>
+                                <form id="orderLookupForm">
+                                    <div class="form-group">
+                                        <!-- <label for="name">Name:</label> -->
+                                        <input type="text" id="name" name="name" placeholder="name" required>
                                     </div>
-                                </div>
+                                    <div class="form-group">
+                                        <!-- <label for="phone">Phone Number:</label> -->
+                                        <input type="tel" id="phone" name="phone" placeholder="phone number" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- <label for="order-id">Order Number:</label> -->
+                                        <input type="text" id="order-id" name="order-id" placeholder="order number"
+                                            required>
+                                    </div>
 
+                                    <button type="submit" class="lookup-button">Lookup Order</button>
+                                    <div class="Signw3">
+                                        <p><a class="dont" href="#section1" id='s-u'
+                                                onclick="goToScroll('sign-up')">Don't
+                                                Have
+                                                an
+                                                Account?</a>
+                                        </p>
+                                    </div>
+                                </form>
 
-
-                                <button type="submit" class="log-button">Login</button>
-                            </form>
-                            <div class="Signw2">
-                                <p><a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't Have
-                                        an
-                                        Account?</a>
-                                </p>
                             </div>
 
+
                         </div>
-
-
-
-                        <div class="content-item" id="content2">
-                            <h2>Order Lookup</h2>
-                            <form id="orderLookupForm">
-                                <div class="form-group">
-                                    <!-- <label for="name">Name:</label> -->
-                                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                                </div>
-                                <div class="form-group">
-                                    <!-- <label for="phone">Phone Number:</label> -->
-                                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <!-- <label for="order-id">Order Number:</label> -->
-                                    <input type="text" id="order-id" name="order-id"
-                                        placeholder="Enter your order number" required>
-                                </div>
-                                <button type="submit">Lookup Order</button>
-                            </form>
-                            <div class="Signw2">
-                                <p><a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't Have
-                                        an
-                                        Account?</a>
-                                </p>
-                            </div>
-                        </div>
-
-
                     </div>
-                </div>
 
             </section>
 
@@ -621,15 +703,20 @@
 
             </section>
 
-
+            <div class="Signw2">
+                <p><a class="dont" href="#section1" id='s-u' onclick="goToScroll('sign-up')">Don't Have
+                        an
+                        Account?</a>
+                </p>
+            </div>
 
 
 
         </div>
-    </div>
+        </div>
 
 
-</main>
+    </main>
 
     <script>
 
@@ -654,16 +741,16 @@
             tabs[0].click();
 
             // Toggle password visibility
-            const passwordField = document.getElementById('login-password');
-            const togglePasswordButton = document.getElementById('toggle-password');
-            const toggleIcon = document.getElementById('toggle-icon');
+            // const passwordField = document.getElementById('login-password');
+            // const togglePasswordButton = document.getElementById('toggle-password');
+            // const toggleIcon = document.getElementById('toggle-icon');
 
-            togglePasswordButton.addEventListener('click', () => {
-                const type = passwordField.type === 'password' ? 'text' : 'password';
-                passwordField.type = type;
-                toggleIcon.classList.toggle('fa-eye', type === 'password');
-                toggleIcon.classList.toggle('fa-eye-slash', type === 'text');
-            });
+            // togglePasswordButton.addEventListener('click', () => {
+            //     const type = passwordField.type === 'password' ? 'text' : 'password';
+            //     passwordField.type = type;
+            //     toggleIcon.classList.toggle('fa-eye', type === 'password');
+            //     toggleIcon.classList.toggle('fa-eye-slash', type === 'text');
+            // });
         });
 
 

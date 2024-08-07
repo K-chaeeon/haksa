@@ -20,6 +20,7 @@ body {
     align-items: center;
     margin: 0;
     z-index: 0;
+    overflow: hidden;
 
 
 
@@ -300,7 +301,7 @@ margin-top: 25px;
 }
 
 .container2 h2 {
-    padding: 50px 0px 20px 0px;
+    padding: 50px 0px 35px 0px;
 }
 
 form {

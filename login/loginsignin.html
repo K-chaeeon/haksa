@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login_and_signin</title>
+
+    <link rel="stylesheet" href="loginsignin.css">
+
+
+</head>
+
+<body>
+ 
+
+    <main class="main" role="main">
+        <section id="s0">
+            <div class="con-b">
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div id="boxcenter"></div>
+                <div class="container">
+                    <div class="container2">
+                        <div class="tabs">
+                            <div class="tab" id="tab1">로그인</div>
+                            <div class="tab" id="tab2">비회원 주문조회</div>
+                        </div>
+                        <div class="content">
+                            <div class="content-item" id="content1">
+                                <h2>로그인</h2>
+                                <form id="loginForm">
+                                    <div class="form-group">
+                                        <input type="text" id="login-ID" name="ID" placeholder="아이디" required>
+                                    </div>
+                                    <div class="form-group password-group">
+                                        <div class="password-container">
+                                            <input type="password" id="login-password" name="password"
+                                                placeholder="비밀번호" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="remember-me" name="remember-me">
+                                        <label for="remember-me">아이디 저장</label>
+                                    </div>
+                                    <div class="help">
+                                        <p class="forg">
+                                            <a class="forgot" aria-hidden="true" href="#">아이디 및 비밀번호 찾기</a>
+                                        </p>
+                                    </div>
+                                    <div class="line">
+                                        OR
+                                    </div>
+                                    <div class="sns-wrap">
+                                        <div class="login-sns">
+                                            <a href=""><img class="KKO" src="/img/login/K.webp" alt="Kakao"></a>
+                                            <a href=""><img class="GGL" src="/img/login/G.png" alt="Google"></a>
+                                            <a href=""><img class="NVR" src="/img/login/N.png" width="40"
+                                                    alt="Naver"></a>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="log-button">로그인</button>
+                                </form>
+                                <div class="Signw2" id="Signw2">
+                                    <p><a class="dont" href="#section1" id='s-u'
+                                            onclick="goToScroll('sign-up')">회원가입</a></p>
+                                </div>
+                            </div>
+                            <div class="content-item" id="content2">
+                                <h2>비회원 주문조회</h2>
+                                <form id="orderLookupForm">
+                                    <div class="form-group">
+                                        <input type="text" id="name-o" name="name" placeholder="이름" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="tel" id="phone" name="phone" placeholder="전화번호" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="order-id" name="order-id" placeholder="주문번호" required>
+                                    </div>
+                                    <button type="submit" class="lookup-button">주문조회</button>
+                                    <div class="Signw3">
+                                        <p><a class="dont" href="#section1" id='s-u2'
+                                                onclick="goToScroll('sign-up')">회원가입</a></p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="s1">
+            <div class="sign-up">
+                <div class="wrap2">
+                    <div class="u-box"> <!--.user 사용하기-->
+                        <div class="s-form-wrap">
+
+                            <!--아이디/비밀번호/비밀번호확인/이름/주소/일반전화/휴대전화/이메일-->
+                            <div class="sign-in-box">
+
+
+                                <form action="login.html">
+
+                                    <h2>회원가입</h2>
+
+                                    <div class="ok">
+
+                                        <div class="form-group2-2">
+                                            <input type="text" id="login-ID2" name="ID" placeholder="아이디" required>
+
+                                            <input type="submit" value="중복확인" class="idbtn">
+
+
+
+                                        </div>
+
+
+                                        <div class="form-group2">
+                                            <input type="password" id="login-password" name="password"
+                                                placeholder="비밀번호" required>
+                                        </div>
+                                        <div class="form-group2">
+                                            <input type="password" id="login-password" name="password"
+                                                placeholder="비밀번호 확인 " required>
+                                        </div>
+                                        <div class="form-group2">
+                                            <input type="text" id="name" name="name" placeholder="이름" required>
+                                            <input type="text" id="name" name="name" placeholder="닉네임" required>
+
+                                        </div>
+
+                                        <div class="form-group-a">
+                                            <input type="text" id="postal-code" name="postal-code" placeholder="우편번호"
+                                                required>
+                                            <input type="submit" value="검색" class="search-btn">
+                                        </div>
+                                        <div class="form-group-a">
+                                            <input type="text" id="address" name="address" placeholder="주소" required>
+                                        </div>
+                                        <div class="form-group-a-a">
+                                            <input type="text" id="detailed-address" name="detailed-address"
+                                                placeholder="상세주소" required>
+                                        </div>
+
+
+                                        <div class="form-group-a">
+                                            <input type="text" class="email" id="email" name="email" placeholder="이메일"
+                                                required> <a>@</a>
+                                            <select>
+                                                <option>naver.com</option>
+                                                <option>gmail.com</option>
+                                                <option>daum.net</option>
+                                                <option>nate.com</option>
+                                            </select>
+                                        </div>
+
+                                        <div id="checkbox2">
+                                            <div class="form-group checkbox-group2">
+                                                <input type="checkbox" id="remember-me" name="remember-me">
+                                                <label for="Receive Email Notification">마케팅 수신 동의</label>
+                                            </div>
+                                        </div>
+                                        <div class="birth">
+                                            <div class="wow">
+                                                <a class="cack">🎂</a>
+                                                <input type="date" class="text" id="birthdate" name="birthdate"
+                                                    required>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button">
+                                        <button type="submit" class="btn">로그인</button>
+                                        <button type="button" class="btn2" id="back-button">뒤로</button>
+
+
+                                    </div>
+
+                                </form>
+                                </table>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="s2">
+            <!--아디비번찾기-->
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.content-item');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.id.replace('tab', 'content');
+
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+
+                    tab.classList.add('active');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // Activate the first tab by default
+            tabs[0].click();
+
+            // Toggle password visibility
+            // const passwordField = document.getElementById('login-password');
+            // const togglePasswordButton = document.getElementById('toggle-password');
+            // const toggleIcon = document.getElementById('toggle-icon');
+
+            // togglePasswordButton.addEventListener('click', () => {
+            //     const type = passwordField.type === 'password' ? 'text' : 'password';
+            //     passwordField.type = type;
+            //     toggleIcon.classList.toggle('fa-eye', type === 'password');
+            //     toggleIcon.classList.toggle('fa-eye-slash', type === 'text');
+            // });
+        });
+
+        document.getElementById('s-u').addEventListener('click', function () {
+            document.getElementById('s1').style.display = 'flex'; // Use flex to center
+            document.body.style.overflow = 'auto';
+            document.getElementById('s1').scrollIntoView({ behavior: 'smooth' });
+
+
+            // Disable scroll after scrolling to section 2
+            setTimeout(function () {
+                document.body.style.overflow = 'hidden';
+            }, 600); // Adjust timeout based on scroll animation duration
+        });
+
+        document.getElementById('s-u2').addEventListener('click', function () {
+            document.getElementById('s1').style.display = 'flex'; // Use flex to center
+            document.body.style.overflow = 'auto';
+            document.getElementById('s1').scrollIntoView({ behavior: 'smooth' });
+
+
+            // Disable scroll after scrolling to section 2
+            setTimeout(function () {
+                document.body.style.overflow = 'hidden';
+            }, 600); // Adjust timeout based on scroll animation duration
+        });
+
+        document.getElementById('back-button').addEventListener('click', function () {
+            document.getElementById('s0').scrollIntoView({ behavior: 'smooth' });
+            document.body.style.overflow = 'hidden'; // Disable scroll
+        });
+
+
+
+    </script>
+</body>
+
+</html>

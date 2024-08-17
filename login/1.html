@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            /* font-family: Arial, sans-serif; */
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            z-index: 0;
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        button {
+            border-radius: 5px;
+        }
+
+
+        /*-------------------*/
+        main
+        /* flex-direction: column    ;
+       
+            display: flex;
+            padding-top: 170px;
+          
+    
+    } */
+
+        .mainscreen {
+
+
+            padding-bottom: 500px;
+        }
+
+
+
+        /*a태그 하이퍼링크*/
+        a {
+            text-decoration: none;
+            /*하이퍼링크 밑줄 제거*/
+            color: inherit;
+            /*하이퍼 링크 색상 제거 */
+        }
+
+        /* 우측 상단 메뉴 */
+        .top_menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            padding: 10px;
+            margin: 0;
+            color: #000000;
+            background-color: rgb(0, 255, 13);
+            justify-content: space-between;
+            /* 로고와 아이콘 사이에 공간 분배 */
+        }
+
+        /* 로고 */
+        .top_menu .logo {
+            font-family: 'neurimboGothicRegular';
+            margin: 0 auto;
+            /* 좌우 여백을 자동으로 조정하여 중앙 정렬 */
+        }
+
+        /* 아이콘들 컨테이너 */
+        .top_menu .top_icons {
+            display: flex;
+            align-items: center;
+        }
+
+        /* 아이콘 */
+        .top_menu .top_icon {
+            margin: 0 5px;
+            /* 아이콘 사이의 여백 조정 */
+        }
+
+        /* 아이콘 중앙 수직 정렬 */
+        .top_menu .top_icon svg {
+            vertical-align: middle;
+        }
+
+        /*우측상단 검색, 마이페이지, 찜, 장바구니, 로그인_글자 속성*/
+        .sign li {
+            margin: 0 5px;
+            /*메뉴끼리의 사이 여백*/
+            /* text-align: center; /*텍스트 중앙 정렬
+    font-size: 0.6rem;
+    color: rgb(31, 218, 255); */
+        }
+
+        /*헤드폰, 이어폰, 사운드바, 스피커, 고객지원_박스 속성*/
+        .categories {
+            margin: 0px;
+            padding: 10px;
+            padding-bottom: 20px;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            /*가로로 중앙 정렬*/
+            background-color: rgb(0, 255, 13);
+        }
+
+
+        /*헤드폰, 이어폰, 사운드바, 스피커, 고객지원_각 글자 속성*/
+        .categories li {
+            font-family: 'GmarketSansMedium';
+            text-align: center;
+            /*텍스트 중앙 정렬*/
+            margin: 0 10px;
+            /*각 글자 사이 여백*/
+            padding: 5px 20px;
+            /*각 글자 박스 크기*/
+            color: #000000;
+        }
+
+        /*-------------------*/
+
+        #s0 {
+            height: 100%;
+        }
+
+
+        .con-b {
+            padding-top: 170px;
+        }
+
+
+
+        .box1 {
+
+            width: 350px;
+            height: 100%;
+            background: rgb(0, 255, 13);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 
+    .boxcenter {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 30%;
+        height: 30%;
+        text-align: center;
+        transform: translate(-50%, -50%)
+    } */
+
+
+        .container {
+            border: 1px solid #000000;
+            width: 461px;
+            border-radius: 5px;
+            height: 650px;
+            flex-direction: column;
+            border-bottom-style: none;
+            margin-bottom: 0;
+        }
+
+
+        .tabs {
+            display: flex;
+
+        }
+
+        #tab2 {
+            border-radius: 0px 5px 0px 0px;
+
+        }
+
+        .help {
+            box-sizing: border-box;
+            margin-top: 25px;
+            padding: 20px 1px 1px 1px;
+
+        }
+
+        .help :hover {
+            text-decoration: underline;
+            background-color: rgb(0, 255, 13);
+        }
+
+        .tab {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            background: rgb(0, 255, 13);
+            /* 탭의 배경 색상 */
+            color: #000000;
+            /* 기본 텍스트 색상 */
+            border: none;
+            /* 테두리 제거 */
+            transition: background-color 0.3s, color 0.3s;
+            width: 230;
+            border-radius: 5px 0px 0px 0px;
+        }
+
+        .tab.active {
+            background-color: rgb(165, 115, 231);
+            /* 활성화된 탭의 배경 색상 */
+            color: #000000;
+            /* 활성화된 탭의 텍스트 색상 */
+        }
+
+
+
+        .content {
+            width: 458px;
+            background: #ffffff;
+            /* 내용 영역의 배경 색상 */
+            color: #000000;
+            /* 내용 영역의 텍스트 색상 */
+            display: flex;
+            justify-content: center;
+            /* 수평 중앙 정렬 */
+            align-items: center;
+            /* 수직 중앙 정렬 */
+        }
+
+        .content-item {
+            display: none;
+            text-align: center;
+            padding-top: 20px;
+            /* 텍스트 중앙 정렬 */
+        }
+
+        .content-item.active {
+            display: block;
+        }
+
+        .container2 h2 {
+            padding: 50px 0px 20px 0px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 폼 요소를 중앙 정렬 */
+            width: 100%;
+            /* 폼의 너비를 100%로 설정 */
+            max-width: 460px;
+            /* 폼의 최대 너비 설정 */
+            padding-top: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            width: 100%;
+            /* 인풋 박스를 폼 너비에 맞춤 */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px 0px 5px 0px;
+            font-size: 13px;
+            padding-top: 3px;
+
+        }
+
+        input {
+            width: 310px;
+            /* 인풋 박스 너비를 폼 너비에 맞춤 */
+            max-width: 350px;
+            /* 인풋 박스 최대 너비 설정 */
+            height: 33px;
+            /* 인풋 박스 높이 */
+            padding: 0 10px;
+            border: none;
+            /* 테두리 제거 */
+            background: #ffffff;
+            /* 입력 박스 배경 색상 */
+            color: #000000;
+            /* 입력 박스 텍스트 색상 */
+            font-size: 16px;
+            /* 입력 박스 텍스트 크기 */
+            border: 0.5px solid #000000;
+        }
+
+        #name-o {
+            width: 310px;
+            /* 인풋 박스 너비를 폼 너비에 맞춤 */
+            max-width: 350px;
+            /* 인풋 박스 최대 너비 설정 */
+            height: 33px;
+            /* 인풋 박스 높이 */
+            padding: 0 10px;
+            border: none;
+            /* 테두리 제거 */
+            background: #ffffff;
+            /* 입력 박스 배경 색상 */
+            color: #000000;
+            /* 입력 박스 텍스트 색상 */
+            font-size: 16px;
+            /* 입력 박스 텍스트 크기 */
+            border: 0.5px solid #000000;
+        }
+
+        #loginForm {
+            padding-top: 25px;
+
+        }
+
+
+        .forgot {}
+
+
+
+        #remember-me {
+            width: 15px;
+            height: 15px;
+            margin-left: 30px;
+            margin-top: 4px;
+
+        }
+
+        .forg {
+            font-size: 14px;
+            /* Set font size to 12px */
+            /* Align text to the right */
+
+        }
+
+
+
+
+
+        .line {
+            display: flex;
+            flex-basis: 100%;
+            align-items: center;
+            color: rgba(0, 0, 0, 0.35);
+            font-size: 14px;
+            padding-top: 10px;
+        }
+
+        .line::before {
+            content: "";
+            flex-grow: 20px;
+            margin: 0px 16px;
+            background: rgba(0, 0, 0, 0.35);
+            height: 1px;
+            font-size: 0px;
+            line-height: 0px;
+            width: 100px;
+
+
+        }
+
+        .line::after {
+            content: "";
+            flex-grow: 1;
+            margin: 0px 16px;
+            background: rgba(0, 0, 0, 0.35);
+            height: 1px;
+            font-size: 0px;
+            line-height: 0px;
+            width: 100px;
+        }
+
+        .sns-wrap {
+            margin-top: .1em;
+            margin-bottom: .5em;
+            display: flex;
+            flex-basis: 100%;
+            padding-top: 10px;
+        }
+
+        .KKO {
+            height: 40px;
+            padding-right: 20px;
+
+
+        }
+
+        .GGL {
+            height: 40px;
+            padding-right: 20px;
+
+        }
+
+
+        .log-button {
+            margin-top: 70px;
+            padding: 15px;
+            width: 280px;
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #000000;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s;
+
+
+        }
+
+        .lookup-button {
+            margin-top: 30px;
+            padding: 15px;
+            width: 280px;
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #000000;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s;
+
+        }
+
+        button:hover {
+            background-color: rgb(0, 255, 13);
+            width: 280px;
+        }
+
+        /* 
+    #toggle-password{
+    
+        position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 5px;
+    border-radius: 15px;
+    } */
+
+
+        /* 체크박스 그룹 스타일 */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            /* 체크박스와 라벨을 수직으로 중앙 정렬 */
+            justify-content: flex-start;
+            /* 체크박스와 라벨을 왼쪽으로 정렬 */
+            width: 350px;
+            /* 체크박스 그룹의 너비를 100%로 설정 */
+            margin-bottom: 30px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 5px;
+            /* 체크박스와 라벨 사이에 여백 추가 */
+        }
+
+        /* 비밀번호 입력 박스와 버튼 스타일 */
+        .password-group {
+            margin-bottom: 5px;
+            /* display: flex; */
+            /* align-items: center; */
+            /* 비밀번호 입력 박스와 버튼을 수직으로 중앙 정렬 */
+            /* width: 100%; */
+            /* 비밀번호 입력 박스와 버튼의 너비를 100%로 설정 */
+        }
+
+        .password-container {
+            /* display: flex; */
+            /* align-items: center; */
+            /* 비밀번호 입력 박스와 버튼을 수직으로 중앙 정렬 */
+            /* width: 100%; */
+            /* 비밀번호 입력 박스와 버튼의 너비를 100%로 설정 */
+        }
+
+        .form-group {
+            float: left;
+            margin-bottom: 15px;
+
+        }
+
+        #orderLookupForm {
+            padding-top: 25px;
+        }
+
+
+        /* .password-container input[type="password"] {
+    flex: 1; }/* 비밀번호 입력 박스가 가능한 공간을 차지하도록 */
+
+
+        /* .password-container button {
+    margin-left: 10px; 
+    padding: 0; 
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #007bff; 
+    font-size: 18px; 
+    }
+    
+    .password-container button:hover {
+    color: #0056b3; 
+    }
+    */
+
+        .forg {
+            padding-bottom: 0px 10px 0px 2px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab" id="tab1">로그인</div>
+            <div class="tab" id="tab2">비회원 주문조회</div>
+        </div>
+        <div class="content">
+            <div class="content-item" id="content1">
+                <h2>로그인</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <input type="text" id="login-ID" name="ID" placeholder="아이디" required>
+                    </div>
+                    <div class="form-group password-group">
+                        <div class="password-container">
+                            <input type="password" id="login-password" name="password" placeholder="비밀번호" required>
+                        </div>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="remember-me" name="remember-me">
+                        <label for="remember-me">아이디 저장</label>
+                    </div>
+                    <div class="help">
+                        <p class="forg">
+                            <a class="forgot" aria-hidden="true" href="#">아이디 및 비밀번호 찾기</a>
+                        </p>
+                    </div>
+                    <div class="line">
+                        OR
+                    </div>
+                    <div class="sns-wrap">
+                        <div class="login-sns">
+                            <a href=""><img class="KKO" src="/img/login/K.webp" alt="Kakao"></a>
+                            <a href=""><img class="GGL" src="/img/login/G.png" alt="Google"></a>
+                            <a href=""><img class="NVR" src="/img/login/N.png" width="40" alt="Naver"></a>
+                        </div>
+                    </div>
+                    <button type="submit" class="log-button">로그인</button>
+                </form>
+                <div class="Signw2" id="Signw2">
+                    <p><a class="dont" href="#">회원가입</a></p>
+                </div>
+            </div>
+            <div class="content-item" id="content2">
+                <h2>비회원 주문조회</h2>
+                <form id="orderLookupForm">
+                    <div class="form-group">
+                        <input type="text" id="name-o" name="name" placeholder="이름" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="전화번호" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="order-id" name="order-id" placeholder="주문번호" required>
+                    </div>
+                    <button type="submit" class="lookup-button">주문조회</button>
+                    <div class="Signw3">
+                        <p><a class="dont" href="#">회원가입</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.content-item');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.id.replace('tab', 'content');
+
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+
+                    tab.classList.add('active');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // Activate the first tab by default
+            tabs[0].click();
+
+            // Toggle password visibility
+            // const passwordField = document.getElementById('login-password');
+            // const togglePasswordButton = document.getElementById('toggle-password');
+            // const toggleIcon = document.getElementById('toggle-icon');
+
+            // togglePasswordButton.addEventListener('click', () => {
+            //     const type = passwordField.type === 'password' ? 'text' : 'password';
+            //     passwordField.type = type;
+            //     toggleIcon.classList.toggle('fa-eye', type === 'password');
+            //     toggleIcon.classList.toggle('fa-eye-slash', type === 'text');
+            // });
+        });
+
+    </script>
+
+</body>
+
+</html>

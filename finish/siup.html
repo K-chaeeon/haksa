@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        /* body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } */
+
+        /* body의 기본 마진 제거 */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        /* 헤더 스타일 */
+        header {
+            height: 70px;
+            background-color: #c18de4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            /* 헤더 위에 빈 공간 없애기 위해 margin-top 설정 */
+            margin-top: 0;
+            /* 헤더 아래에 빈 공간이 생길 경우 margin-bottom 설정 */
+            margin: 0;
+        }
+
+
+        h1 {
+            flex: 1;
+            text-align: center;
+            margin: 0;
+        }
+
+        .top_icons {
+            display: flex;
+            gap: 5px;
+        }
+
+        .top_icon {
+            display: flex;
+            align-items: center;
+        }
+
+
+
+        /* 햄버거 메뉴바 전체 설정 */
+        #menu_hamburger {
+            display: block;
+            position: relative;
+            top: -42px;
+            left: 40px;
+            z-index: 1;
+            width: 50px;
+            height: 100%;
+        }
+
+        /* 햄버거 메뉴바 인풋박스 */
+        #menu_hamburger input[type="checkbox"] {
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            cursor: pointer;
+            opacity: 0;
+            z-index: 200;
+            top: -30px;
+            left: -20px;
+            right: 20px;
+        }
+
+
+
+        /* 햄버거 아이콘 */
+        #menu_hamburger span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            margin-bottom: 5px;
+            position: relative;
+            background: #5884ad;
+            transform-origin: 4px 0px;
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+                background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+                opacity 0.55s ease;
+            z-index: 100;
+        }
+
+
+
+        #menu_hamburger span:first-child {
+            transform-origin: 0% 0%;
+        }
+
+        #menu_hamburger span:nth-last-child(2) {
+            transform-origin: 0% 100%;
+        }
+
+        #menu_hamburger input[type="checkbox"]:checked~span {
+            opacity: 1;
+            transform: rotate(45deg) translate(-2px, -1px);
+            background: #232323;
+        }
+
+        #menu_hamburger input[type="checkbox"]:checked~span:nth-last-child(3) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
+
+        #menu_hamburger input[type="checkbox"]:checked~span:nth-last-child(2) {
+            transform: rotate(-45deg) translate(0, -1px);
+        }
+
+        /* 메뉴 박스 속성 */
+        #menu {
+            position: absolute;
+            width: 210px;
+            height: 200vh;
+            margin: -60px 0 0 -40px;
+            padding-right: 0px;
+            padding-left: 0px;
+            padding-top: 80px;
+
+            background: #a8a8a8;
+            list-style-type: none;
+            transform-origin: 0% 0%;
+            transform: translate(-100%, 0);
+            transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1);
+        }
+
+        #menu a {
+            text-decoration: none;
+            color: #000000;
+            transition: color 0.2s ease;
+            padding-left: 45px;
+        }
+
+        #menu a:hover {
+            color: rgb(116, 175, 243);
+        }
+
+        #menu li {
+            padding: 7px 0;
+            font-size: 19px;
+        }
+
+        #menu label {
+            padding-left: 40px;
+            padding-bottom: 10px;
+            padding-right: 70px;
+        }
+
+        label {
+            transition: color 0.2s ease;
+        }
+
+        label:hover {
+            color: rgb(116, 175, 243);
+
+        }
+
+        .dropdown li {
+            width: 100%;
+
+        }
+
+        .dropdown a {
+            font-size: 16px;
+        }
+
+        /* 하위 메뉴 스타일 */
+        .submenu {
+            max-height: 0;
+            /* 기본 상태에서는 숨김 */
+            overflow: hidden;
+            /* 넘치는 내용 숨기기 */
+            opacity: 0;
+            /* 기본 상태에서 투명 */
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            /* 불릿 제거 */
+            transition: max-height 0.2s ease, opacity 0.5s ease;
+            /* 부드러운 전환 효과 */
+        }
+
+        /* 하위 카테고리 배경색 및 스타일 추가 */
+        .submenu li {
+            background-color: #757575;
+            padding: 0px;
+            margin: 0px;
+
+        }
+
+        /* 하위 카테고리 항목의 호버 효과 */
+        .submenu li:hover {
+            background-color: #c0c0c0;
+            /* 호버 시 배경색 */
+
+        }
+
+        /* 드롭다운 기능: 클릭 시 하위 메뉴 표시 */
+        .dropdown>input:checked+ul.submenu {
+            max-height: 500px;
+            /* 하위 메뉴가 펼쳐질 때의 높이 */
+            opacity: 1;
+            /* 하위 메뉴가 펼쳐질 때 불투명 */
+        }
+
+        /* 숨겨진 체크박스 추가 */
+        .dropdown>label {
+            cursor: pointer;
+        }
+
+        /* 햄버거 메뉴 활성화 시 메뉴 보이게 설정 */
+        #menu_hamburger input[type="checkbox"]:checked~ul {
+            transform: none;
+        }
+
+
+
+        body>nav {
+            position: fixed;
+        }
+
+
+        /* 목록 화면 오른쪽에 고정 */
+        .recently-viewed {
+            position: fixed;
+            /* 스크롤을 내려도 위치 고정 */
+            top: 50%;
+            /* 전체 화면의 중앙에 위치 */
+            right: 0;
+            /* 화면의 오른쪽 끝에 배치 */
+            transform: translateY(-50%);
+            /* 스크롤 내려도 중앙정렬 유지 */
+            width: 100px;
+            /* 상품 목록 너비 */
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            padding: 10px;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        /* 목록 제목 */
+        .recently-viewed h3 {
+            font-size: 14px;
+            margin: 0;
+            margin-bottom: 8px;
+        }
+
+        /* 상품들 보이는 공간 */
+        .recently-viewed ul {
+            list-style: none;
+            /* 불릿 제거 */
+            padding: 0;
+            margin: 0;
+            max-height: 320px;
+            overflow: hidden;
+        }
+
+        /* 상품 */
+        .recently-viewed ul li {
+            margin-bottom: 5px;
+        }
+
+        /* 마지막 상품 항목의 여백 제거 */
+        .recently-viewed ul li:last-child {
+            margin-bottom: 0;
+            /* 마지막 항목의 하단 여백 제거 */
+        }
+
+        /* 상품 링크 */
+        .recently-viewed ul li a {
+            display: block;
+            /* 이미지 전체 클릭 가능 */
+        }
+
+        /* 상품 이미지 */
+        .recently-viewed ul li img {
+            width: 100%;
+            height: auto;
+            /* 이미지 비율 유지하며 높이 자동 조정 */
+            border: 0px solid #ddd;
+            border-radius: 4px;
+            /* 이미지 모서리를 둥글게 설정 */
+        }
+
+        /* 화살표 버튼 */
+        .arrow {
+            cursor: pointer;
+            font-size: 20px;
+            margin: 3px 0;
+            color: #333;
+        }
+
+        /* 비활성화된 화살표 */
+        .arrow.disabled {
+            color: #ccc;
+            cursor: not-allowed;
+            /* 커서 비활성화 */
+        }
+
+
+
+
+
+
+
+        .SignUp-wrap {
+            height: 40vh;
+            width: 40vw;
+        }
+
+
+
+        #SignUp-info {
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+
+        }
+
+        .h2-ok {
+            padding: 0 0 15px 20px;
+            font-size: 17px;
+            color: #222;
+            line-height: 100%;
+            border-bottom: 2px solid #cbe6ff;
+        }
+
+        .title {
+            margin: 2rem auto;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .agree-container {
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        .agree {
+            position: relative;
+            background-color: #ffffff;
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+
+        .agree.active {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .agree0 {
+            padding: 1rem;
+            background-color: rgb(255, 255, 255);
+            border-bottom: 2px solid #007bff;
+
+
+        }
+
+        .agree1 {
+            padding: 1rem;
+            background-color: rgb(240, 247, 255);
+
+        }
+
+        .agree-title {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .agree-container input {
+            margin-right: 10px;
+        }
+
+        .agree-sub {
+            max-height: 0;
+            overflow: auto;
+            transition: max-height 0.3s ease-in-out;
+            background-color: rgba(246, 251, 255, 0.438);
+        }
+
+        .agree-text {
+
+            padding: 0.5rem 1rem 0.5rem 1rem;
+            color: rgba(0, 0, 0, 0.863);
+            font-size: 16px;
+            overflow: auto;
+
+        }
+
+        .agree.active .agree-sub {
+            max-height: 200px;
+            border-top: 1px solid silver;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .agree-btn {
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            border: 0;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            background-color: #007bff;
+        }
+
+        .agree-btn:focus {
+            outline: 0;
+        }
+
+        .agree-icon.close {
+            display: none;
+        }
+
+        .agree.active .agree-icon.close {
+            color: #ffffff;
+            display: block;
+        }
+
+        .agree.active .agree-icon.open {
+            display: none;
+        }
+
+
+        .line {
+            display: flex;
+            flex-basis: 100%;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            color: rgba(0, 0, 0, 0.35);
+            font-size: 15px;
+            padding-top: 60px;
+            max-width: 500px;
+
+
+        }
+
+        .line::before {
+            content: "";
+            flex-grow: 50px;
+            margin: 0px 16px;
+            background: rgba(0, 0, 0, 0.35);
+            height: 1px;
+            font-size: 0px;
+            line-height: 0px;
+            width: 150px;
+
+
+        }
+
+        .line::after {
+            content: "";
+            margin: 0px 16px;
+            background: rgba(0, 0, 0, 0.35);
+            height: 1px;
+            font-size: 0px;
+            line-height: 0px;
+            width: 150px;
+        }
+
+
+
+        .h2-info {
+            padding: 60px 0 40px 0;
+            font-size: 30px;
+            color: #222;
+            line-height: 100%;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            padding-bottom: 20px;
+
+        }
+
+
+        .form-group>input {
+
+            width: 500px;
+            height: 50px;
+            /* 인풋 박스 높이 */
+            padding: 0 10px;
+            color: #000000;
+            /* 입력 박스 텍스트 색상 */
+            font-size: 20px;
+            /* 입력 박스 텍스트 크기 */
+            border-width: 0 0 1px;
+            background-color: #d1e7ff7f;
+
+
+        }
+
+        .form-group>input:focus {
+            outline: none;
+            background-color: rgb(240, 247, 255);
+            border-color: #007bff;
+
+        }
+
+        #up-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lookup-button {
+            margin: 60px;
+            padding: 15px;
+            width: 280px;
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #000000;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .lookup-button:hover {
+            background-color: rgb(0, 89, 255);
+            width: 280px;
+        }
+    </style>
+</head>
+<!--헤더, 로고-->
+<header>
+    <h1>로고</h1>
+
+    <!-- 아이콘들 -->
+    <nav class="top_icons">
+        <div class="top_icon" id="search_icon">
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    id="Capa_1" x="0px" y="0px" viewBox="0 0 513.749 513.749"
+                    style="enable-background:new 0 0 513.749 513.749;" xml:space="preserve" width="20" height="20">
+                    <g>
+                        <path
+                            d="M504.352,459.061l-99.435-99.477c74.402-99.427,54.115-240.344-45.312-314.746S119.261-9.277,44.859,90.15 S-9.256,330.494,90.171,404.896c79.868,59.766,189.565,59.766,269.434,0l99.477,99.477c12.501,12.501,32.769,12.501,45.269,0 c12.501-12.501,12.501-32.769,0-45.269L504.352,459.061z M225.717,385.696c-88.366,0-160-71.634-160-160s71.634-160,160-160 s160,71.634,160,160C385.623,314.022,314.044,385.602,225.717,385.696z" />
+                    </g>
+                </svg></a>
+        </div>
+        <div class="top_icon" id="login_icon">
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                    xml:space="preserve" width="20" height="20">
+                    <g>
+                        <circle cx="256" cy="128" r="128" />
+                        <path
+                            d="M256,298.667c-105.99,0.118-191.882,86.01-192,192C64,502.449,73.551,512,85.333,512h341.333 c11.782,0,21.333-9.551,21.333-21.333C447.882,384.677,361.99,298.784,256,298.667z" />
+                    </g>
+                </svg></a>
+        </div>
+        <div class="top_icon" id="basket_icon">
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"
+                    width="20" height="20">
+                    <path
+                        d="M23.27,9.03c-.57-.66-1.4-1.03-2.27-1.03h-.09C20.41,3.51,16.59,0,11.97,0S3.53,3.51,3.03,8h-.06c-.87,0-1.7,.38-2.27,1.03C.13,9.69-.12,10.56,0,11.42l1.06,7.42c.42,2.94,2.97,5.15,5.94,5.15h9.97c2.97,0,5.52-2.21,5.94-5.15l1.06-7.42c.12-.86-.13-1.73-.7-2.39ZM11.97,2c3.52,0,6.43,2.61,6.92,6H5.05c.49-3.39,3.4-6,6.92-6Z" />
+                </svg></a>
+        </div>
+    </nav>
+
+</header>
+
+<body>
+
+
+
+
+
+    <!--햄버거 메뉴바-->
+    <nav id="top">
+        <div id="menu_hamburger">
+            <!--삼단바모양-->
+            <input type="checkbox" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+            <!--메뉴 종류-->
+            <ul id="menu">
+                <li><a href="#">메인</a></li>
+
+                <li class="dropdown">
+                    <label for="headphone-toggle">헤드폰</label>
+                    <input type="checkbox" id="headphone-toggle">
+                    <ul class="submenu">
+                        <li><a href="#">전체</a></li>
+                        <li><a href="#">헤드폰</a></li>
+                        <li><a href="#">헤드폰 악세서리</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <label for="earphone-toggle">이어폰</label>
+                    <input type="checkbox" id="earphone-toggle">
+                    <ul class="submenu">
+                        <li><a href="#">전체</a></li>
+                        <li><a href="#">이어폰</a></li>
+                        <li><a href="#">이어폰 악세서리</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <label for="speaker-toggle">스피커</label>
+                    <input type="checkbox" id="speaker-toggle">
+                    <ul class="submenu">
+                        <li><a href="#">전체</a></li>
+                        <li><a href="#">스피커</a></li>
+                        <li><a href="#">스피커 악세서리</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <label for="bar-toggle">사운드바</label>
+                    <input type="checkbox" id="bar-toggle">
+                    <ul class="submenu">
+                        <li><a href="#">전체</a></li>
+                        <li><a href="#">사운드바</a></li>
+                        <li><a href="#">사운드바 악세서리</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <label for="my-toggle">마이페이지</label>
+                    <input type="checkbox" id="my-toggle">
+                    <ul class="submenu">
+                        <li><a href="#">배송정보</a></li>
+                        <li><a href="#">내정보수정</a></li>
+                        <li><a href="#">취소/교환/반품</a></li>
+                        <li><a href="#">내 글 관리</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <label for="info-toggle">고객지원</label>
+                    <input type="checkbox" id="info-toggle">
+                    <ul class="submenu">
+                        <li><a href="#">공지 및 이벤트</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">1:1문의</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- 최근본 -->
+    <div class="recently-viewed">
+        <h3>최근 본 상품</h3>
+        <div class="arrow up">&#9650;</div>
+        <ul>
+            <li><a href="#"><img src="https://via.placeholder.com/100" alt="상품1"></a></li>
+            <li><a href="#"><img src="https://via.placeholder.com/100" alt="상품2"></a></li>
+            <li><a href="#"><img src="https://via.placeholder.com/100" alt="상품3"></a></li>
+            <li><a href="#"><img src="https://via.placeholder.com/100" alt="상품4"></a></li>
+            <li><a href="#"><img src="https://via.placeholder.com/100" alt="상품5"></a></li>
+        </ul>
+        <div class="arrow down">&#9660;</div>
+    </div>
+
+
+
+    <div class="a1111">
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="SignUp-wrap">
+        <h1 class="title">약관동의</h1>
+        <ul class="agree-container">
+            <div class="agree0">
+                <input type="checkbox" name="agree_all" id="agree_all">
+                <label for="agree_all">이용약관, 개인정보 수집 및 이용, 프로모션 안내 메일 수신(선택)에 모두 동의합니다.</label>
+            </div>
+            <li class="agree">
+
+                <div class="agree1">
+                    <p class="agree-title">
+                        <input type="checkbox" name="agree" id="ck1"><label for="chk1">[필수]이용 약관에 동의합니다.</label>
+                    </p>
+                </div>
+                <div class="agree-sub">
+                    <p class="agree-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iure aperiam odio veritatis
+                        ducimus
+                        animi dolore maxime porro quod. Laborum beatae vitae molestias facilis magni voluptas corporis
+                        quibusdam optio vero?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum aperiam, ea
+                        culpa
+                        ut voluptate fugit. Laborum delectus illo, ab harum ut, soluta sequi mollitia exercitationem
+                        cumque
+                        corporis voluptatem? Corporis, mollitia!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iure aperiam odio veritatis
+                        ducimus
+                        animi dolore maxime porro quod. Laborum beatae vitae molestias facilis magni voluptas corporis
+                        quibusdam optio vero?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum aperiam, ea
+                        culpa
+                        ut voluptate fugit. Laborum delectus illo, ab harum ut, soluta sequi mollitia exercitationem
+                        cumque
+                        corporis voluptatem? Corporis, mollitia!
+                    </p>
+
+                </div>
+                <button class="agree-btn">
+                    <span class="agree-icon open">+</span>
+                    <span class="agree-icon close">-</span>
+                </button>
+            </li>
+            <li class="agree">
+                <div class="agree1">
+                    <p class="agree-title">
+                        <input type="checkbox" name="agree" id="ck1"><label for="chk1">[필수] 개인정보 수집 및 이용 동의</label>
+
+                    </p>
+                </div>
+                <div class="agree-sub">
+                    <p class="agree-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iure aperiam odio veritatis
+                        ducimus
+                        animi dolore maxime porro quod. Laborum beatae vitae molestias facilis magni voluptas corporis
+                        quibusdam optio vero?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum aperiam, ea
+                        culpa
+                        ut voluptate fugit. Laborum delectus illo, ab harum ut, soluta sequi mollitia exercitationem
+                        cumque
+                        corporis voluptatem? Corporis, mollitia!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iure aperiam odio veritatis
+                        ducimus
+                        animi dolore maxime porro quod. Laborum beatae vitae molestias facilis magni voluptas corporis
+                        quibusdam optio vero?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum aperiam, ea
+                        culpa
+                        ut voluptate fugit. Laborum delectus illo, ab harum ut, soluta sequi mollitia exercitationem
+                        cumque
+                        corporis voluptatem? Corporis, mollitia!
+                    </p>
+                </div>
+                <button class="agree-btn">
+                    <span class="agree-icon open">+</span>
+                    <span class="agree-icon close">-</span>
+                </button>
+            </li>
+            <li class="agree">
+                <div class="agree1">
+                    <p class="agree-title">
+                        <input type="checkbox" name="agree" id="ck1"><label for="chk1">[선택] 개인정보 자사 마케팅 수집 및 이용
+                            동의</label>
+
+                    </p>
+                </div>
+                <div class="agree-sub">
+                    <p class="agree-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iure aperiam odio veritatis
+                        ducimus
+                        animi dolore maxime porro quod. Laborum beatae vitae molestias facilis magni voluptas corporis
+                        quibusdam optio vero?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum aperiam, ea
+                        culpa
+                        ut voluptate fugit. Laborum delectus illo, ab harum ut, soluta sequi mollitia exercitationem
+                        cumque
+                        corporis voluptatem? Corporis, mollitia!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla iure aperiam odio veritatis
+                        ducimus
+                        animi dolore maxime porro quod. Laborum beatae vitae molestias facilis magni voluptas corporis
+                        quibusdam optio vero?Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum aperiam, ea
+                        culpa
+                        ut voluptate fugit. Laborum delectus illo, ab harum ut, soluta sequi mollitia exercitationem
+                        cumque
+                        corporis voluptatem? Corporis, mollitia!
+                    </p>
+                </div>
+                <button class="agree-btn">
+                    <span class="agree-icon open">+</span>
+                    <span class="agree-icon close">-</span>
+                </button>
+            </li>
+        </ul>
+        <div class="line">
+            ▽
+        </div>
+        <div id="SignUp-info">
+            <h2 class="h2-info">회원정보</h2>
+
+            <form id="up-form">
+                <div class="form-group">
+                    <input type="text" id="login-ID" name="ID" placeholder="아이디" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="pass" placeholder="비밀번호" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="pass" placeholder="비밀번호 확인" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="연락처" required>
+                </div>
+                <button type="submit" class="lookup-button">회원가입</button>
+            </form>
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const upArrow = document.querySelector('.arrow.up'); // 위쪽 화살표 요소 선택
+            const downArrow = document.querySelector('.arrow.down'); // 아래쪽 화살표 요소 선택
+            const list = document.querySelector('.recently-viewed ul'); // 최근 본 상품 목록 선택
+            let scrollPosition = 0; // 현재 스크롤 위치 저장 변수
+            const itemHeight = 110; // 각 항목의 높이 (이미지 100px + 10px 마진)
+
+            // 화살표의 활성화/비활성화 상태를 업데이트하는 함수
+            function updateArrows() {
+                const maxScrollPosition = list.scrollHeight - list.clientHeight; // 최대 스크롤 가능한 위치 계산
+                upArrow.classList.toggle('disabled', scrollPosition <= 0); // 스크롤이 최상단이면 위쪽 화살표 비활성화
+                downArrow.classList.toggle('disabled', scrollPosition >= maxScrollPosition); // 스크롤이 최하단이면 아래쪽 화살표 비활성화
+            }
+
+            // 위쪽 화살표 클릭 시 동작
+            upArrow.addEventListener('click', function () {
+                if (scrollPosition > 0) { // 스크롤 위치가 최상단보다 아래에 있는 경우에만 실행
+                    scrollPosition -= itemHeight; // 스크롤 위치를 한 항목만큼 위로 이동
+                    list.scrollTo({ top: scrollPosition, behavior: 'smooth' }); // 스크롤을 부드럽게 이동
+                    updateArrows(); // 화살표 상태 업데이트
+                }
+            });
+
+            // 아래쪽 화살표 클릭 시 동작
+            downArrow.addEventListener('click', function () {
+                const maxScrollPosition = list.scrollHeight - list.clientHeight; // 최대 스크롤 가능한 위치 계산
+                if (scrollPosition < maxScrollPosition) { // 스크롤 위치가 최하단보다 위에 있는 경우에만 실행
+                    scrollPosition += itemHeight; // 스크롤 위치를 한 항목만큼 아래로 이동
+                    list.scrollTo({ top: scrollPosition, behavior: 'smooth' }); // 스크롤을 부드럽게 이동
+                    updateArrows(); // 화살표 상태 업데이트
+                }
+            });
+
+            updateArrows(); // 초기 상태에서 화살표 상태 업데이트
+        });
+
+
+
+
+        const btns = document.querySelectorAll(".agree-btn");
+
+        btns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const agreeItem = btn.parentNode;
+                const isActive = agreeItem.classList.contains("active");
+
+                removeActiveClasses();
+
+                if (!isActive) {
+                    agreeItem.classList.add("active");
+                }
+            });
+        });
+
+        function removeActiveClasses() {
+            btns.forEach((btn) => {
+                btn.parentNode.classList.remove("active");
+            });
+        }
+
+
+        // 동의 모두선택 / 해제
+        const agreeChkAll = document.querySelector('input[name=agree_all]');
+        agreeChkAll.addEventListener('change', (e) => {
+            let chk1Chk = document.querySelectorAll('input[name=agree]');
+            for (let i = 0; i < chk1Chk.length; i++) {
+                chk1Chk[i].checked = e.target.checked;
+            }
+        });
+    </script>
+</body>
+
+</html>

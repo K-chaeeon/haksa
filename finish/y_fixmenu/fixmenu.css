@@ -14,6 +14,10 @@ a {
   color: #000000;
 }
 
+body{
+  margin: 0;
+  padding: 0;
+}
 
 /* 🌊헤더 스타일 */
 header {
@@ -324,11 +328,14 @@ body>nav {
 /*스크롤시 부드럽게*/
 html {
   scroll-behavior: smooth;
+  
 }
 
 /*🦶푸터*/
 footer {
+  position: absolute;
   background-color: #4676ce;
   color: #ffffff;
   margin-top: 30px;
+  bottom: 0%;
 }
